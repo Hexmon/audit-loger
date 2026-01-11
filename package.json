@@ -1,0 +1,44 @@
+{
+  "name": "@yourorg/audit-log",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@9.0.6",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "test": "vitest --run --workspace vitest.workspace.ts",
+    "build": "pnpm -r build",
+    "bench": "node benchmarks/throughput.mjs",
+    "bench:load": "node benchmarks/load.mjs",
+    "changeset": "changeset",
+    "release:version": "pnpm changeset version",
+    "release:publish": "pnpm changeset publish",
+    "release": "pnpm release:version && pnpm release:publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@eslint/js": "^9.39.2",
+    "@types/node": "^20.14.10",
+    "@typescript-eslint/eslint-plugin": "^8.52.0",
+    "@typescript-eslint/parser": "^8.52.0",
+    "@yourorg/audit-core": "workspace:*",
+    "@yourorg/audit-express": "workspace:*",
+    "@yourorg/audit-next": "workspace:*",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "express": "^4.18.2",
+    "prettier": "^3.3.3",
+    "tsup": "^8.2.4",
+    "typescript-eslint": "^8.52.0",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  },
+  "pnpm": {
+    "overrides": {
+      "eslint-config-prettier": "10.1.8"
+    }
+  }
+}
