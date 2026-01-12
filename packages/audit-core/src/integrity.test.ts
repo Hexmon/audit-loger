@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { createAuditLogger, computeIntegrityHash } from './index';
 import type { AuditEventInput } from './index';
 

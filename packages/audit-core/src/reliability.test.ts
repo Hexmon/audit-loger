@@ -35,6 +35,11 @@ const createTransientFailureSink = (failures: number): AuditSink => {
   };
 };
 
+const sleep = (ms: number) =>
+  new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+
 afterEach(() => {
   vi.useRealTimers();
   vi.restoreAllMocks();
@@ -42,8 +47,6 @@ afterEach(() => {
 
 describe('reliability', () => {
   it('retries transient failures and eventually succeeds', async () => {
-    vi.useFakeTimers();
-    vi.setSystemTime(new Date(0));
     vi.spyOn(Math, 'random').mockReturnValue(0);
 
     const sink = createTransientFailureSink(2);
@@ -55,9 +58,7 @@ describe('reliability', () => {
       retry: { maxAttempts: 3, baseBackoffMs: 5, maxBackoffMs: 20 },
     });
 
-    const logPromise = logger.log(baseInput);
-    await vi.advanceTimersByTimeAsync(100);
-    const result = await logPromise;
+    const result = await logger.log(baseInput);
 
     expect(result.ok).toBe(true);
     const stats = logger.getStats();
@@ -67,9 +68,6 @@ describe('reliability', () => {
   });
 
   it('opens the circuit and recovers after cooldown', async () => {
-    vi.useFakeTimers();
-    vi.setSystemTime(new Date(0));
-
     let shouldFail = true;
     const sink: AuditSink = {
       writeBatch: async (events) => {
@@ -103,32 +101,23 @@ describe('reliability', () => {
       circuitBreaker: { failureThreshold: 2, cooldownMs: 50 },
     });
 
-    const first = logger.log(baseInput);
-    await vi.advanceTimersByTimeAsync(5);
-    const firstResult = await first;
+    const firstResult = await logger.log(baseInput);
     expect(firstResult.ok).toBe(false);
 
-    const second = logger.log({ ...baseInput, action: 'user.logout' });
-    await vi.advanceTimersByTimeAsync(5);
-    const secondResult = await second;
+    const secondResult = await logger.log({ ...baseInput, action: 'user.logout' });
     expect(secondResult.ok).toBe(false);
 
     expect(logger.getStats().gauges.audit_circuit_open).toBe(1);
 
     shouldFail = false;
-    await vi.advanceTimersByTimeAsync(60);
+    await sleep(60);
 
-    const third = logger.log({ ...baseInput, action: 'user.reset' });
-    await vi.advanceTimersByTimeAsync(5);
-    const thirdResult = await third;
+    const thirdResult = await logger.log({ ...baseInput, action: 'user.reset' });
     expect(thirdResult.ok).toBe(true);
     expect(logger.getStats().gauges.audit_circuit_open).toBe(0);
   });
 
   it('drops when the queue is full in QUEUE mode', async () => {
-    vi.useFakeTimers();
-    vi.setSystemTime(new Date(0));
-
     const logger = createAuditLogger({
       mode: 'QUEUE',
       batchSize: 10,
@@ -150,9 +139,6 @@ describe('reliability', () => {
   });
 
   it('rejects when the queue is full in BLOCK mode', async () => {
-    vi.useFakeTimers();
-    vi.setSystemTime(new Date(0));
-
     const logger = createAuditLogger({
       mode: 'BLOCK',
       batchSize: 10,
@@ -161,6 +147,7 @@ describe('reliability', () => {
     });
 
     const firstPromise = logger.log(baseInput);
+    await Promise.resolve();
 
     const second = await logger.log({ ...baseInput, action: 'user.logout' });
     expect(second.ok).toBe(false);
@@ -168,7 +155,7 @@ describe('reliability', () => {
       expect(second.error.code).toBe('QUEUE_FULL');
     }
 
-    await vi.advanceTimersByTimeAsync(10_000);
+    await logger.flush();
     await firstPromise;
   });
 

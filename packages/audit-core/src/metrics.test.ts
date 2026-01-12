@@ -36,8 +36,6 @@ afterEach(() => {
 
 describe('metrics', () => {
   it('records retries and per-sink failures', async () => {
-    vi.useFakeTimers();
-    vi.setSystemTime(new Date(0));
     vi.spyOn(Math, 'random').mockReturnValue(0);
 
     let attempts = 0;
@@ -69,9 +67,7 @@ describe('metrics', () => {
       retry: { maxAttempts: 2, baseBackoffMs: 5, maxBackoffMs: 5 },
     });
 
-    const logPromise = logger.log(baseInput);
-    await vi.advanceTimersByTimeAsync(50);
-    const result = await logPromise;
+    const result = await logger.log(baseInput);
     expect(result.ok).toBe(true);
 
     const metrics = logger.getMetrics();
@@ -90,9 +86,6 @@ describe('metrics', () => {
   });
 
   it('records permanent failures without retries', async () => {
-    vi.useFakeTimers();
-    vi.setSystemTime(new Date(0));
-
     const sink: AuditSink = {
       name: 'primary',
       writeBatch: async (events) => ({
@@ -115,9 +108,7 @@ describe('metrics', () => {
       retry: { maxAttempts: 1, baseBackoffMs: 1, maxBackoffMs: 1 },
     });
 
-    const logPromise = logger.log(baseInput);
-    await vi.advanceTimersByTimeAsync(20);
-    const result = await logPromise;
+    const result = await logger.log(baseInput);
     expect(result.ok).toBe(false);
 
     const metrics = logger.getMetrics();

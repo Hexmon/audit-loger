@@ -2266,6 +2266,7 @@ class QueueWriter {
       return await this.processing;
     } finally {
       this.processing = null;
+      this.schedule();
     }
   }
 

@@ -29,7 +29,9 @@ type AuditContextStore = {
   method?: string;
 };
 
-const AUDIT_CONTEXT_KEYS: Array<keyof AuditContext> = [
+type ContextKey = keyof AuditContextStore & keyof AuditContext;
+
+const AUDIT_CONTEXT_KEYS: Array<ContextKey> = [
   'requestId',
   'traceId',
   'sessionId',

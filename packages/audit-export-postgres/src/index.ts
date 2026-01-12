@@ -70,6 +70,9 @@ const normalizePageSize = (value?: number): number => {
 const isNonEmptyString = (value: unknown): value is string =>
   typeof value === 'string' && value.trim().length > 0;
 
+const isAuditOutcome = (value: unknown): value is AuditOutcome =>
+  value === 'SUCCESS' || value === 'FAILURE' || value === 'DENIED' || value === 'ERROR';
+
 export const encodeCursor = (cursor: ExportCursor): string =>
   Buffer.from(JSON.stringify(cursor), 'utf8').toString('base64');
 
@@ -245,7 +248,7 @@ const rowToEvent = (row: Record<string, unknown>): AuditEvent => {
     !eventId ||
     schemaVersion === undefined ||
     !action ||
-    !outcome ||
+    !isAuditOutcome(outcome) ||
     !actorId ||
     !actorType
   ) {

@@ -13,10 +13,13 @@ afterEach(() => {
   vi.restoreAllMocks();
 });
 
+const sleep = (ms: number) =>
+  new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+
 describe('chaos', () => {
   it('recovers from transient failures with queue retries and circuit breaker', async () => {
-    vi.useFakeTimers();
-    vi.setSystemTime(new Date(0));
     vi.spyOn(Math, 'random').mockReturnValue(0);
 
     let shouldFail = true;
@@ -51,13 +54,16 @@ describe('chaos', () => {
     const first = await logger.log(baseInput);
     expect(first.ok).toBe(true);
 
-    await vi.advanceTimersByTimeAsync(20);
+    await logger.flush();
+    await sleep(15);
+    await logger.flush();
 
     expect(logger.getStats().gauges.audit_circuit_open).toBe(1);
 
     shouldFail = false;
 
-    await vi.advanceTimersByTimeAsync(120);
+    await sleep(120);
+    await logger.flush();
 
     const flush = await logger.flush();
     expect(flush.ok).toBe(true);

@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { buildExportQuery, decodeCursor, encodeCursor } from './index';
 
 const baseOptions = {
