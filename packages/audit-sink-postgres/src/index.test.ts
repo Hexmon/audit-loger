@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import { Pool } from 'pg';
-import type { AuditEvent } from '@yourorg/audit-core';
+import type { AuditEvent } from '@stackio/audit-core';
 import { createPostgresAuditSink } from './index';
 
-const connectionString = process.env.PG_TEST_URL;
+const connectionString = process.env.PG_TEST_URL ?? process.env.TEST_POSTGRES_URL;
 const describeMaybe = connectionString ? describe : describe.skip;
 
 const baseEvent: AuditEvent = {

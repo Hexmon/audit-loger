@@ -1,11 +1,14 @@
-import { createAuditLogger, saasMultiTenantStrict } from '@yourorg/audit-core';
-import { withAudit } from '@yourorg/audit-next';
+import { createAuditLogger, saasMultiTenantStrict } from '@stackio/audit-core';
+import { withAudit } from '@stackio/audit-next';
 
 const audit = createAuditLogger({
   ...saasMultiTenantStrict(),
-  service: 'next-app',
+  service: 'nextjs-app-router',
   environment: 'local',
 });
+
+const getHeader = (req: Request, name: string): string | undefined =>
+  req.headers.get(name) ?? undefined;
 
 export const runtime = 'nodejs';
 
@@ -15,16 +18,17 @@ export const POST = withAudit(
     await req.audit.log({
       action: 'user.login',
       outcome: 'SUCCESS',
-      metadata: { authMethod: 'password', mfa: 'webauthn' },
+      target: { type: 'session', id: getHeader(req, 'x-session-id') },
+      metadata: { source: 'nextjs-app-router' },
     });
 
-    return Response.json({ ok: true });
+    return new Response('ok');
   },
   {
-    getTenantId: (req) => req.headers.get('x-tenant-id') ?? undefined,
+    getTenantId: (req) => getHeader(req, 'x-tenant-id'),
     getActor: (req) => {
-      const userId = req.headers.get('x-user-id');
-      return userId ? { type: 'user', id: userId } : undefined;
+      const userId = getHeader(req, 'x-user-id');
+      return userId ? { type: 'user', id: userId } : { type: 'service', id: 'system' };
     },
   },
 );

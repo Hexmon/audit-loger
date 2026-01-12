@@ -1,7 +1,7 @@
 # Security
 
 ## Reporting
-If you discover a security issue, please email security@yourorg.example. Do not open a public issue.
+If you discover a security issue, please email security@stackio.example. Do not open a public issue.
 
 ## Data Handling
 - Redaction is enabled by default.
@@ -11,7 +11,7 @@ If you discover a security issue, please email security@yourorg.example. Do not 
 ## Dependency Security
 - Run `pnpm audit` regularly and before releases; investigate all high/critical findings.
 - Keep `pnpm-lock.yaml` committed to preserve verified dependency graphs.
-- Prefer minimal dependencies in `@yourorg/audit-core` and review transitive updates.
+- Prefer minimal dependencies in `@stackio/audit-core` and review transitive updates.
 - Enable automated dependency alerts (Dependabot/Renovate) for timely patches.
 
 ## Release & Supply Chain

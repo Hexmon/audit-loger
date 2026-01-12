@@ -1,4 +1,4 @@
-export const PACKAGE_NAME = '@yourorg/audit-core';
+export const PACKAGE_NAME = '@stackio/audit-core';
 
 export type AuditOutcome = 'SUCCESS' | 'FAILURE' | 'DENIED' | 'ERROR';
 
@@ -334,7 +334,7 @@ export type MultiSinkOptions = {
   sinkNames?: string[];
 };
 
-export type MultiSink = AuditSink & {
+export type MultiSink = Omit<AuditSink, 'writeBatch'> & {
   writeBatch: (events: AuditEvent[], signal?: AbortSignal) => Promise<MultiSinkWriteResult>;
 };
 

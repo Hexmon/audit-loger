@@ -33,11 +33,11 @@ const audit = createAuditLogger({
 `signed` requires a signer hook; if none is configured the logger rejects events.
 
 ## Verification
-Use `@yourorg/audit-cli` to verify stored events:
+Use `@stackio/audit-cli` to verify stored events:
 
 ```bash
-pnpm --filter @yourorg/audit-cli exec audit-cli verify-file --path ./audit.jsonl
-pnpm --filter @yourorg/audit-cli exec audit-cli verify-postgres --connection "..."
+pnpm --filter @stackio/audit-cli exec audit-cli verify-file --path ./audit.jsonl
+pnpm --filter @stackio/audit-cli exec audit-cli verify-postgres --connection "..."
 ```
 
 ## Guarantees and Limits

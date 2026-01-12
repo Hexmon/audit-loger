@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { NextRequest } from 'next/server';
-import type { AuditEvent, AuditSink } from '@yourorg/audit-core';
-import { createAuditLogger } from '@yourorg/audit-core';
-import { getAuditContext } from '@yourorg/audit-node';
+import type { AuditEvent, AuditSink } from '@stackio/audit-core';
+import { createAuditLogger } from '@stackio/audit-core';
+import { getAuditContext } from '@stackio/audit-node';
 import { getClientIp, getRequestId, getUserAgent, withAudit } from './index';
 
 describe('next audit helpers', () => {

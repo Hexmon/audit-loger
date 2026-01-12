@@ -1,6 +1,6 @@
 # Express Basic Example
 
-Minimal Express integration using `@yourorg/audit-express`.
+Minimal Express integration using `@stackio/audit-express`.
 
 ## Run
 1) Install dependencies at the repo root.

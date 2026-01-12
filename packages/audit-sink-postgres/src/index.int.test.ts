@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { Client } from 'pg';
-import type { AuditEvent } from '@yourorg/audit-core';
+import type { AuditEvent } from '@stackio/audit-core';
 import { createPostgresAuditSink } from './index';
 
 const POSTGRES_URL = process.env.TEST_POSTGRES_URL;
@@ -112,7 +112,7 @@ run('postgres sink integration', () => {
       );
       expect(countResult.rows[0].count).toBe(1);
 
-      await sink.shutdown();
+      await sink.shutdown?.();
     },
     30_000,
   );

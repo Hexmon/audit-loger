@@ -2,7 +2,8 @@
 
 ## Before release
 - Ensure every user-facing change has a changeset (`pnpm changeset`).
-- Run `pnpm lint`, `pnpm test`, and `pnpm -r build`.
+- Run `pnpm lint`, `pnpm test`, `pnpm -r build`, and `pnpm -r typecheck`.
+- Run `pnpm -r exports:check` and `pnpm -r pack:check` to validate published artifacts.
 - Verify integration tests if applicable (see `CONTRIBUTING.md`).
 - Review `SECURITY.md` and ensure any security notes are up to date.
 - Confirm `publishConfig.access` is correct for your npm scope (public vs restricted).

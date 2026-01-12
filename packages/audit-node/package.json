@@ -1,5 +1,5 @@
 {
-  "name": "@yourorg/audit-node",
+  "name": "@stackio/audit-node",
   "version": "0.0.0",
   "private": false,
   "type": "module",
@@ -13,7 +13,11 @@
       "require": "./dist/index.cjs"
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -21,6 +25,26 @@
   "scripts": {
     "build": "tsup",
     "test": "vitest --run --config ./vitest.config.ts",
-    "lint": "eslint src --max-warnings 0"
+    "lint": "eslint src --max-warnings 0",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "exports:check": "node ../../scripts/exports-check.mjs --package @stackio/audit-node",
+    "pack:check": "node ../../scripts/pack-check.mjs --package @stackio/audit-node"
+  },
+  "description": "Node.js context helpers for audit logging.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stackio/audit-log.git"
+  },
+  "keywords": [
+    "audit",
+    "logging",
+    "node",
+    "context",
+    "async-local-storage",
+    "typescript"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

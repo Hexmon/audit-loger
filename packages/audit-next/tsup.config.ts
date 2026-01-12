@@ -9,7 +9,7 @@ export default defineConfig({
   clean: true,
   outDir: 'dist',
   treeshake: true,
-  external: ['@yourorg/audit-core', '@yourorg/audit-node', 'next/server'],
+  external: ['@stackio/audit-core', '@stackio/audit-node', 'next/server'],
   outExtension({ format }) {
     return { js: format === 'esm' ? '.mjs' : '.cjs' };
   }

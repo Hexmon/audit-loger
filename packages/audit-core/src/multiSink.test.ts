@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import type { AuditEvent, AuditSink } from './index';
+import type { AuditEvent, AuditSink, MultiSink } from './index';
 import { multiSink } from './index';
 
 const baseEvent: AuditEvent = {
@@ -35,7 +35,7 @@ const createFailureSink = (): AuditSink => ({
 
 describe('multiSink', () => {
   it('aggregates BEST_EFFORT as success when at least one sink writes', async () => {
-    const sink = multiSink([createSuccessSink(), createFailureSink()], {
+    const sink: MultiSink = multiSink([createSuccessSink(), createFailureSink()], {
       fanoutMode: 'BEST_EFFORT',
     });
 
@@ -48,7 +48,7 @@ describe('multiSink', () => {
   });
 
   it('aggregates ALL_OR_NOTHING as failure when any sink fails', async () => {
-    const sink = multiSink([createSuccessSink(), createFailureSink()], {
+    const sink: MultiSink = multiSink([createSuccessSink(), createFailureSink()], {
       fanoutMode: 'ALL_OR_NOTHING',
     });
 

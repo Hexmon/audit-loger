@@ -1,8 +1,8 @@
 import express from 'express';
 import request from 'supertest';
 import { describe, expect, it } from 'vitest';
-import type { AuditEvent, AuditSink } from '@yourorg/audit-core';
-import { createAuditLogger } from '@yourorg/audit-core';
+import type { AuditEvent, AuditSink } from '@stackio/audit-core';
+import { createAuditLogger } from '@stackio/audit-core';
 import { createAuditMiddleware } from './index';
 
 describe('createAuditMiddleware', () => {

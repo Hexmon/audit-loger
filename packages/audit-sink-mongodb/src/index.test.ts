@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import { MongoClient } from 'mongodb';
-import type { AuditEvent } from '@yourorg/audit-core';
+import type { AuditEvent } from '@stackio/audit-core';
 import { createMongoAuditSink } from './index';
 
-const connectionString = process.env.MONGO_TEST_URL;
+const connectionString = process.env.MONGO_TEST_URL ?? process.env.TEST_MONGO_URL;
 const describeMaybe = connectionString ? describe : describe.skip;
 
 const baseEvent: AuditEvent = {

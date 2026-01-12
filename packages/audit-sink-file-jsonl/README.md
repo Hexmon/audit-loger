@@ -1,10 +1,10 @@
-# @yourorg/audit-sink-file-jsonl
+# @stackio/audit-sink-file-jsonl
 
 Append-only JSONL file sink for Node.js environments.
 
 ## Usage
 ```ts
-import { createFileJsonlSink } from '@yourorg/audit-sink-file-jsonl';
+import { createFileJsonlSink } from '@stackio/audit-sink-file-jsonl';
 
 const sink = createFileJsonlSink({
   filePath: '/var/log/audit.jsonl',

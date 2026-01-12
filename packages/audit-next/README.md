@@ -1,4 +1,4 @@
-# @yourorg/audit-next
+# @stackio/audit-next
 
 Next.js App Router helpers for audit logging. Provides a `withAudit` wrapper that
 attaches `req.audit` and captures request context.
@@ -6,8 +6,8 @@ attaches `req.audit` and captures request context.
 ## Usage
 
 ```ts
-import { createAuditLogger } from '@yourorg/audit-core';
-import { withAudit } from '@yourorg/audit-next';
+import { createAuditLogger } from '@stackio/audit-core';
+import { withAudit } from '@stackio/audit-next';
 
 const audit = createAuditLogger({ service: 'api', environment: 'dev' });
 
@@ -30,9 +30,9 @@ The wrapper captures:
 - `route` and `method` (added to event metadata under `metadata.http`)
 
 ## Node vs Edge
-`withAudit` uses `@yourorg/audit-node` (AsyncLocalStorage) when running in
+`withAudit` uses `@stackio/audit-node` (AsyncLocalStorage) when running in
 Node.js. Edge runtimes do not support `AsyncLocalStorage`.
-Install `@yourorg/audit-node` in Node.js deployments to enable context propagation.
+Install `@stackio/audit-node` in Node.js deployments to enable context propagation.
 
 If you use the Edge runtime:
 - Set `runtime: 'edge'` in the options.

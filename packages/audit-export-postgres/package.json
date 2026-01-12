@@ -1,5 +1,5 @@
 {
-  "name": "@yourorg/audit-export-postgres",
+  "name": "@stackio/audit-export-postgres",
   "version": "0.0.0",
   "private": false,
   "type": "module",
@@ -13,7 +13,11 @@
       "require": "./dist/index.cjs"
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -21,13 +25,32 @@
   "scripts": {
     "build": "tsup",
     "test": "vitest --run --config ./vitest.config.ts",
-    "lint": "eslint src --max-warnings 0"
+    "lint": "eslint src --max-warnings 0",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "exports:check": "node ../../scripts/exports-check.mjs --package @stackio/audit-export-postgres",
+    "pack:check": "node ../../scripts/pack-check.mjs --package @stackio/audit-export-postgres"
   },
   "dependencies": {
-    "@yourorg/audit-core": "workspace:*",
+    "@stackio/audit-core": "workspace:*",
     "pg": "^8.12.0"
   },
   "devDependencies": {
     "@types/pg": "^8.15.4"
+  },
+  "description": "Export helpers for audit logs stored in Postgres.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stackio/audit-log.git"
+  },
+  "keywords": [
+    "audit",
+    "logging",
+    "postgres",
+    "export",
+    "csv"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

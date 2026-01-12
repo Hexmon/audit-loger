@@ -10,7 +10,8 @@ Thanks for contributing! This repo is an early-stage scaffold for an audit loggi
 
 ## Integration tests
 - Start services: `docker compose -f test-infra/docker-compose.yml up -d`
-- Run: `AUDIT_INTEGRATION=1 TEST_POSTGRES_URL=postgres://postgres:postgres@localhost:5432/postgres TEST_MONGO_URL=mongodb://localhost:27017/audit_logs_test pnpm test`
+- Run: `AUDIT_INTEGRATION=1 PG_TEST_URL=postgres://postgres:postgres@localhost:5432/postgres MONGO_TEST_URL=mongodb://localhost:27017/audit_logs_test pnpm test`
+- Alternative env var names `TEST_POSTGRES_URL` and `TEST_MONGO_URL` are also supported.
 - Stop services: `docker compose -f test-infra/docker-compose.yml down`
 
 ## Changesets

@@ -15,5 +15,5 @@ export default defineConfig({
   outExtension({ format }) {
     return { js: format === 'esm' ? '.mjs' : '.cjs' };
   },
-  external: ['@yourorg/audit-core', '@yourorg/audit-export-postgres', 'pg'],
+  external: ['@stackio/audit-core', '@stackio/audit-export-postgres', 'pg'],
 });

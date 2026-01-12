@@ -1,6 +1,6 @@
 # Audit Log Monorepo
 
-Enterprise-grade audit logging for JS/TS with a modular sink ecosystem. This repo is the initial scaffold: structure, tooling, and docs are in place, while runtime logic will be implemented in subsequent steps.
+Enterprise-grade audit logging for JS/TS with a modular sink ecosystem. Includes a runtime-agnostic core, Node/Express/Next adapters, storage sinks, and verification tooling.
 
 ## Goals
 - Correctness, security, reliability, performance, and clear documentation.
@@ -19,28 +19,27 @@ Enterprise-grade audit logging for JS/TS with a modular sink ecosystem. This rep
 - Batching + async non-blocking in QUEUE mode.
 
 ## Packages
-- `@yourorg/audit-core`
-- `@yourorg/audit-node`
-- `@yourorg/audit-express`
-- `@yourorg/audit-next`
-- `@yourorg/audit-cli`
-- `@yourorg/audit-export-postgres`
-- `@yourorg/audit-sink-http`
-- `@yourorg/audit-sink-postgres`
-- `@yourorg/audit-sink-mongodb`
-- `@yourorg/audit-sink-file-jsonl`
-- `@yourorg/audit-buffer-disk` (scaffold only)
+- `@stackio/audit-core`
+- `@stackio/audit-node`
+- `@stackio/audit-express`
+- `@stackio/audit-next`
+- `@stackio/audit-cli`
+- `@stackio/audit-export-postgres`
+- `@stackio/audit-sink-http`
+- `@stackio/audit-sink-postgres`
+- `@stackio/audit-sink-mongodb`
+- `@stackio/audit-sink-file-jsonl`
+- `@stackio/audit-buffer-disk`
 
 ## Examples
-- Express integration: `examples/express-basic`
-- Next.js App Router route handler: `examples/nextjs-app-router`
+- Express integration: `examples/express-basic` and `examples/express`
+- Next.js App Router handlers: `examples/nextjs-app-router` and `examples/next-app-router`
 
 ## Roadmap
-- Define core event model and redaction pipeline.
-- Implement queueing, batching, and retry policy.
-- Add sink implementations with dedupe and backpressure semantics.
-- Add Node/Express/Next adapters and context propagation.
-- Harden docs, observability, and benchmarks.
+- Add hosted control-plane integrations (SIEM/webhook targets).
+- Expand retention automation helpers for Postgres.
+- Add disk buffer compaction and rotation policies.
+- Extend benchmarks across more deployment profiles.
 
 ## Docs
 - `docs/ARCHITECTURE.md`

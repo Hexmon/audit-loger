@@ -2,10 +2,10 @@ import { randomUUID } from 'node:crypto';
 import { mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 import express from 'express';
-import { createAuditLogger, onPremSelfHosted } from '@yourorg/audit-core';
-import { createAuditMiddleware } from '@yourorg/audit-express';
-import { createFileJsonlSink } from '@yourorg/audit-sink-file-jsonl';
-import { createHttpAuditSink } from '@yourorg/audit-sink-http';
+import { createAuditLogger, onPremSelfHosted } from '@stackio/audit-core';
+import { createAuditMiddleware } from '@stackio/audit-express';
+import { createFileJsonlSink } from '@stackio/audit-sink-file-jsonl';
+import { createHttpAuditSink } from '@stackio/audit-sink-http';
 
 const outputDir = join(process.cwd(), 'tmp');
 mkdirSync(outputDir, { recursive: true });

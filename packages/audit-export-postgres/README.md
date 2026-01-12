@@ -1,10 +1,10 @@
-# @yourorg/audit-export-postgres
+# @stackio/audit-export-postgres
 
 Helpers to export audit logs from Postgres with safe, paginated queries.
 
 ## Usage
 ```ts
-import { exportAuditLogs } from '@yourorg/audit-export-postgres';
+import { exportAuditLogs } from '@stackio/audit-export-postgres';
 
 const result = await exportAuditLogs({
   connectionString: process.env.DATABASE_URL,

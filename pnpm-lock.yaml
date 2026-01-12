@@ -17,6 +17,21 @@ importers:
       '@eslint/js':
         specifier: ^9.39.2
         version: 9.39.2
+      '@stackio/audit-core':
+        specifier: workspace:*
+        version: link:packages/audit-core
+      '@stackio/audit-express':
+        specifier: workspace:*
+        version: link:packages/audit-express
+      '@stackio/audit-next':
+        specifier: workspace:*
+        version: link:packages/audit-next
+      '@stackio/audit-sink-file-jsonl':
+        specifier: workspace:*
+        version: link:packages/audit-sink-file-jsonl
+      '@stackio/audit-sink-http':
+        specifier: workspace:*
+        version: link:packages/audit-sink-http
       '@types/node':
         specifier: ^20.14.10
         version: 20.19.28
@@ -26,15 +41,6 @@ importers:
       '@typescript-eslint/parser':
         specifier: ^8.52.0
         version: 8.52.0(eslint@9.39.2)(typescript@5.9.3)
-      '@yourorg/audit-core':
-        specifier: workspace:*
-        version: link:packages/audit-core
-      '@yourorg/audit-express':
-        specifier: workspace:*
-        version: link:packages/audit-express
-      '@yourorg/audit-next':
-        specifier: workspace:*
-        version: link:packages/audit-next
       eslint:
         specifier: ^9.39.2
         version: 9.39.2
@@ -60,14 +66,18 @@ importers:
         specifier: ^2.0.5
         version: 2.1.9(@types/node@20.19.28)
 
-  packages/audit-buffer-disk: {}
+  packages/audit-buffer-disk:
+    dependencies:
+      '@stackio/audit-core':
+        specifier: workspace:*
+        version: link:../audit-core
 
   packages/audit-cli:
     dependencies:
-      '@yourorg/audit-core':
+      '@stackio/audit-core':
         specifier: workspace:*
         version: link:../audit-core
-      '@yourorg/audit-export-postgres':
+      '@stackio/audit-export-postgres':
         specifier: workspace:*
         version: link:../audit-export-postgres
       pg:
@@ -82,7 +92,7 @@ importers:
 
   packages/audit-export-postgres:
     dependencies:
-      '@yourorg/audit-core':
+      '@stackio/audit-core':
         specifier: workspace:*
         version: link:../audit-core
       pg:
@@ -95,10 +105,10 @@ importers:
 
   packages/audit-express:
     dependencies:
-      '@yourorg/audit-core':
+      '@stackio/audit-core':
         specifier: workspace:*
         version: link:../audit-core
-      '@yourorg/audit-node':
+      '@stackio/audit-node':
         specifier: workspace:*
         version: link:../audit-node
       express:
@@ -117,11 +127,11 @@ importers:
 
   packages/audit-next:
     dependencies:
-      '@yourorg/audit-core':
+      '@stackio/audit-core':
         specifier: workspace:*
         version: link:../audit-core
     devDependencies:
-      '@yourorg/audit-node':
+      '@stackio/audit-node':
         specifier: workspace:*
         version: link:../audit-node
       next:
@@ -138,19 +148,19 @@ importers:
 
   packages/audit-sink-file-jsonl:
     dependencies:
-      '@yourorg/audit-core':
+      '@stackio/audit-core':
         specifier: workspace:*
         version: link:../audit-core
 
   packages/audit-sink-http:
     dependencies:
-      '@yourorg/audit-core':
+      '@stackio/audit-core':
         specifier: workspace:*
         version: link:../audit-core
 
   packages/audit-sink-mongodb:
     dependencies:
-      '@yourorg/audit-core':
+      '@stackio/audit-core':
         specifier: workspace:*
         version: link:../audit-core
       mongodb:
@@ -159,7 +169,7 @@ importers:
 
   packages/audit-sink-postgres:
     dependencies:
-      '@yourorg/audit-core':
+      '@stackio/audit-core':
         specifier: workspace:*
         version: link:../audit-core
       pg:

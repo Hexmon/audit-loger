@@ -1,5 +1,5 @@
 {
-  "name": "@yourorg/audit-next",
+  "name": "@stackio/audit-next",
   "version": "0.0.0",
   "private": false,
   "type": "module",
@@ -13,27 +13,31 @@
       "require": "./dist/index.cjs"
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "publishConfig": {
     "access": "public"
   },
   "sideEffects": false,
   "dependencies": {
-    "@yourorg/audit-core": "workspace:*"
+    "@stackio/audit-core": "workspace:*"
   },
   "peerDependencies": {
-    "@yourorg/audit-node": "workspace:*",
+    "@stackio/audit-node": "workspace:*",
     "next": "^16.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
   "peerDependenciesMeta": {
-    "@yourorg/audit-node": {
+    "@stackio/audit-node": {
       "optional": true
     }
   },
   "devDependencies": {
-    "@yourorg/audit-node": "workspace:*",
+    "@stackio/audit-node": "workspace:*",
     "next": "16.1.1",
     "react": "18.3.1",
     "react-dom": "18.3.1"
@@ -41,6 +45,25 @@
   "scripts": {
     "build": "tsup",
     "test": "vitest --run --config ./vitest.config.ts",
-    "lint": "eslint src --max-warnings 0"
+    "lint": "eslint src --max-warnings 0",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "exports:check": "node ../../scripts/exports-check.mjs --package @stackio/audit-next",
+    "pack:check": "node ../../scripts/pack-check.mjs --package @stackio/audit-next"
+  },
+  "description": "Next.js App Router helpers for audit logging.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stackio/audit-log.git"
+  },
+  "keywords": [
+    "audit",
+    "logging",
+    "nextjs",
+    "app-router",
+    "edge"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

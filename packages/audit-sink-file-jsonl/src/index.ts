@@ -5,7 +5,7 @@ import type {
   AuditSink,
   WriteFailure,
   WriteResult,
-} from '@yourorg/audit-core';
+} from '@stackio/audit-core';
 
 export type FileJsonlSinkConfig = {
   filePath: string;

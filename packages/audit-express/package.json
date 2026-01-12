@@ -1,5 +1,5 @@
 {
-  "name": "@yourorg/audit-express",
+  "name": "@stackio/audit-express",
   "version": "0.0.0",
   "private": false,
   "type": "module",
@@ -13,14 +13,18 @@
       "require": "./dist/index.cjs"
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "publishConfig": {
     "access": "public"
   },
   "sideEffects": false,
   "dependencies": {
-    "@yourorg/audit-core": "workspace:*",
-    "@yourorg/audit-node": "workspace:*"
+    "@stackio/audit-core": "workspace:*",
+    "@stackio/audit-node": "workspace:*"
   },
   "peerDependencies": {
     "express": "^4.18.2"
@@ -33,6 +37,25 @@
   "scripts": {
     "build": "tsup",
     "test": "vitest --run --config ./vitest.config.ts",
-    "lint": "eslint src --max-warnings 0"
+    "lint": "eslint src --max-warnings 0",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "exports:check": "node ../../scripts/exports-check.mjs --package @stackio/audit-express",
+    "pack:check": "node ../../scripts/pack-check.mjs --package @stackio/audit-express"
+  },
+  "description": "Express middleware for audit logging with request context.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stackio/audit-log.git"
+  },
+  "keywords": [
+    "audit",
+    "logging",
+    "express",
+    "middleware",
+    "node"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

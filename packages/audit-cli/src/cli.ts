@@ -1,5 +1,5 @@
 import { Client } from 'pg';
-import { exportAuditLogs } from '@yourorg/audit-export-postgres';
+import { exportAuditLogs } from '@stackio/audit-export-postgres';
 import { verifyFile, verifyPostgres } from './verify';
 
 const printHelp = () => {

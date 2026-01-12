@@ -1,7 +1,7 @@
-import type { AuditActor, AuditContext, AuditLogger } from '@yourorg/audit-core';
+import type { AuditActor, AuditContext, AuditLogger } from '@stackio/audit-core';
 import type { NextRequest } from 'next/server';
 
-export const PACKAGE_NAME = '@yourorg/audit-next';
+export const PACKAGE_NAME = '@stackio/audit-next';
 
 export type NextAuditRuntime = 'nodejs' | 'edge';
 
@@ -188,7 +188,7 @@ export const withAudit =
     }
 
     try {
-      const { runWithAuditContext, getAuditContext } = await import('@yourorg/audit-node');
+      const { runWithAuditContext, getAuditContext } = await import('@stackio/audit-node');
       return runWithAuditContext(requestContext, () => handle(getAuditContext));
     } catch {
       return handle(() => requestContext);

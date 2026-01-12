@@ -1,9 +1,9 @@
 import type { NextFunction, Request, Response } from 'express';
-import type { AuditActor, AuditContext, AuditLogger } from '@yourorg/audit-core';
-import type { AuditContextStore } from '@yourorg/audit-node';
-import { getAuditContext, runWithAuditContext } from '@yourorg/audit-node';
+import type { AuditActor, AuditContext, AuditLogger } from '@stackio/audit-core';
+import type { AuditContextStore } from '@stackio/audit-node';
+import { getAuditContext, runWithAuditContext } from '@stackio/audit-node';
 
-export const PACKAGE_NAME = '@yourorg/audit-express';
+export const PACKAGE_NAME = '@stackio/audit-express';
 
 export type ExpressAuditMiddlewareOptions = {
   getActor?: (req: Request) => AuditActor | undefined;

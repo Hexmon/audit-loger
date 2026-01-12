@@ -1,6 +1,6 @@
 import { AsyncLocalStorage } from 'node:async_hooks';
 
-export const PACKAGE_NAME = '@yourorg/audit-node';
+export const PACKAGE_NAME = '@stackio/audit-node';
 
 export type AuditContextStore = {
   requestId?: string;

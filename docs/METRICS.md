@@ -41,7 +41,7 @@ For programmatic access, use `audit.getMetrics()` and read the snapshot in your 
 To plug in a custom exporter, pass a `metrics` registry to `createAuditLogger`.
 
 ```ts
-import { createAuditLogger, createMetricsRegistry } from '@yourorg/audit-core';
+import { createAuditLogger, createMetricsRegistry } from '@stackio/audit-core';
 
 const registry = createMetricsRegistry();
 const audit = createAuditLogger({ metrics: registry });

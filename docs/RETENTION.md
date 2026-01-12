@@ -57,4 +57,4 @@ Common filters for audit viewers:
   ORDER BY occurred_at ASC;
   ```
 
-For application usage, see `@yourorg/audit-export-postgres` for a typed export helper.
+For application usage, see `@stackio/audit-export-postgres` for a typed export helper.
