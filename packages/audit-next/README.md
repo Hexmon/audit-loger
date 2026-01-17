@@ -3,6 +3,19 @@
 Next.js App Router helpers for audit logging. Provides a `withAudit` wrapper that
 attaches `req.audit` and captures request context.
 
+## Install
+
+```bash
+pnpm add @hexmon_tech/audit-next
+npm install @hexmon_tech/audit-next
+```
+
+## Compatibility
+
+- Node.js >= 18
+- Next.js >= 16, React 18+, and `@hexmon_tech/audit-node` (optional peer) for Node contexts
+- Edge runtimes supported through manual context plus HTTP sink writes
+
 ## Usage
 
 ```ts

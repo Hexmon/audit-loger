@@ -3,6 +3,18 @@
 Disk-backed buffer for audit events in Node.js. Use this sink to persist events
 locally and replay them to another sink when it becomes available.
 
+## Install
+
+```bash
+pnpm add @hexmon_tech/audit-buffer-disk
+npm install @hexmon_tech/audit-buffer-disk
+```
+
+## Compatibility
+
+- Node.js >= 18
+- Optimized for Linux/Unix filesystems with durable writes
+
 ## Usage
 ```ts
 import { createAuditLogger } from '@hexmon_tech/audit-core';

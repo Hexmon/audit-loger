@@ -2,6 +2,18 @@
 
 Runtime-agnostic audit event schema, validation helpers, and policy knobs. This package defines the canonical event shape and developer-facing logger API.
 
+## Install
+
+```bash
+pnpm add @hexmon_tech/audit-core
+npm install @hexmon_tech/audit-core
+```
+
+## Compatibility
+
+- Node.js >= 18
+- Dual ESM/CJS entrypoints (`dist/index.{mjs,cjs}`) with `tsup`-generated types
+
 ## Usage
 
 ```ts

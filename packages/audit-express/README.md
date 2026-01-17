@@ -3,6 +3,19 @@
 Express middleware for audit logging. Attaches `req.audit` with request-scoped
 context populated from headers and extractor functions.
 
+## Install
+
+```bash
+pnpm add @hexmon_tech/audit-express
+npm install @hexmon_tech/audit-express
+```
+
+## Compatibility
+
+- Node.js >= 18
+- Express 4.18+ required as a peer dependency
+- Automatically extends `@hexmon_tech/audit-core` and `@hexmon_tech/audit-node`
+
 ## Usage
 
 ```ts

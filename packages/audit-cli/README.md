@@ -2,6 +2,19 @@
 
 Command-line verification tools for audit log integrity chains.
 
+## Install
+
+```bash
+pnpm add @hexmon_tech/audit-cli
+npm install @hexmon_tech/audit-cli
+```
+
+## Compatibility
+
+- Node.js >= 18
+- Depends on `@hexmon_tech/audit-export-postgres` / `pg` for Postgres commands
+- Installs the `audit-cli` binary via the `bin` entry in `package.json`
+
 ## Commands
 
 ### verify-file

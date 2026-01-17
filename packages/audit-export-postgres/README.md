@@ -2,6 +2,18 @@
 
 Helpers to export audit logs from Postgres with safe, paginated queries.
 
+## Install
+
+```bash
+pnpm add @hexmon_tech/audit-export-postgres
+npm install @hexmon_tech/audit-export-postgres
+```
+
+## Compatibility
+
+- Node.js >= 18
+- Postgres 15+ (includes `migrations/*.sql` for the canonical audit table)
+
 ## Usage
 ```ts
 import { exportAuditLogs } from '@hexmon_tech/audit-export-postgres';

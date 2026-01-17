@@ -2,6 +2,18 @@
 
 Append-only JSONL file sink for Node.js environments.
 
+## Install
+
+```bash
+pnpm add @hexmon_tech/audit-sink-file-jsonl
+npm install @hexmon_tech/audit-sink-file-jsonl
+```
+
+## Compatibility
+
+- Node.js >= 18
+- Requires local writable filesystem for JSONL durability
+
 ## Usage
 ```ts
 import { createFileJsonlSink } from '@hexmon_tech/audit-sink-file-jsonl';

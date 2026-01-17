@@ -2,6 +2,18 @@
 
 Postgres sink using the `pg` driver with idempotent inserts via `event_id`.
 
+## Install
+
+```bash
+pnpm add @hexmon_tech/audit-sink-postgres
+npm install @hexmon_tech/audit-sink-postgres
+```
+
+## Compatibility
+
+- Node.js >= 18
+- Postgres 15+ (migrations shipped under `migrations/*.sql`)
+
 ## Usage
 ```ts
 import { createPostgresAuditSink } from '@hexmon_tech/audit-sink-postgres';

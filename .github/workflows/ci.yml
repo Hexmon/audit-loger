@@ -25,6 +25,9 @@ jobs:
       - name: Install
         run: pnpm install
 
+      - name: Typecheck
+        run: pnpm typecheck
+
       - name: Lint
         run: pnpm lint
 
@@ -33,6 +36,15 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+      - name: Smoke tests
+        run: pnpm smoke-tests
+
+      - name: Exports check
+        run: pnpm exports:check
+
+      - name: Pack check
+        run: pnpm pack:check
 
   integration:
     runs-on: ubuntu-latest

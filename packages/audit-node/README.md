@@ -3,6 +3,18 @@
 Node-only helpers for audit logging integrations. Provides an AsyncLocalStorage-backed
 context store so request metadata can flow through async calls without manual threading.
 
+## Install
+
+```bash
+pnpm add @hexmon_tech/audit-node
+npm install @hexmon_tech/audit-node
+```
+
+## Compatibility
+
+- Node.js >= 18 (requires `AsyncLocalStorage`)
+- Intended to pair with `@hexmon_tech/audit-core` for context propagation
+
 ## Usage
 
 ```ts

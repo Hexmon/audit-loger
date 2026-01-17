@@ -2,6 +2,18 @@
 
 MongoDB sink using the official driver with a unique index on `eventId`.
 
+## Install
+
+```bash
+pnpm add @hexmon_tech/audit-sink-mongodb
+npm install @hexmon_tech/audit-sink-mongodb
+```
+
+## Compatibility
+
+- Node.js >= 18
+- MongoDB 6.x+ via the official `mongodb` driver
+
 ## Usage
 ```ts
 import { createMongoAuditSink } from '@hexmon_tech/audit-sink-mongodb';
