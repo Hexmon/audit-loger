@@ -17,19 +17,19 @@ importers:
       '@eslint/js':
         specifier: ^9.39.2
         version: 9.39.2
-      '@hexmon/audit-core':
+      '@hexmon_tech/audit-core':
         specifier: workspace:*
         version: link:packages/audit-core
-      '@hexmon/audit-express':
+      '@hexmon_tech/audit-express':
         specifier: workspace:*
         version: link:packages/audit-express
-      '@hexmon/audit-next':
+      '@hexmon_tech/audit-next':
         specifier: workspace:*
         version: link:packages/audit-next
-      '@hexmon/audit-sink-file-jsonl':
+      '@hexmon_tech/audit-sink-file-jsonl':
         specifier: workspace:*
         version: link:packages/audit-sink-file-jsonl
-      '@hexmon/audit-sink-http':
+      '@hexmon_tech/audit-sink-http':
         specifier: workspace:*
         version: link:packages/audit-sink-http
       '@types/node':
@@ -68,16 +68,16 @@ importers:
 
   packages/audit-buffer-disk:
     dependencies:
-      '@hexmon/audit-core':
+      '@hexmon_tech/audit-core':
         specifier: workspace:*
         version: link:../audit-core
 
   packages/audit-cli:
     dependencies:
-      '@hexmon/audit-core':
+      '@hexmon_tech/audit-core':
         specifier: workspace:*
         version: link:../audit-core
-      '@hexmon/audit-export-postgres':
+      '@hexmon_tech/audit-export-postgres':
         specifier: workspace:*
         version: link:../audit-export-postgres
       pg:
@@ -92,7 +92,7 @@ importers:
 
   packages/audit-export-postgres:
     dependencies:
-      '@hexmon/audit-core':
+      '@hexmon_tech/audit-core':
         specifier: workspace:*
         version: link:../audit-core
       pg:
@@ -105,10 +105,10 @@ importers:
 
   packages/audit-express:
     dependencies:
-      '@hexmon/audit-core':
+      '@hexmon_tech/audit-core':
         specifier: workspace:*
         version: link:../audit-core
-      '@hexmon/audit-node':
+      '@hexmon_tech/audit-node':
         specifier: workspace:*
         version: link:../audit-node
       express:
@@ -127,11 +127,11 @@ importers:
 
   packages/audit-next:
     dependencies:
-      '@hexmon/audit-core':
+      '@hexmon_tech/audit-core':
         specifier: workspace:*
         version: link:../audit-core
     devDependencies:
-      '@hexmon/audit-node':
+      '@hexmon_tech/audit-node':
         specifier: workspace:*
         version: link:../audit-node
       next:
@@ -148,19 +148,19 @@ importers:
 
   packages/audit-sink-file-jsonl:
     dependencies:
-      '@hexmon/audit-core':
+      '@hexmon_tech/audit-core':
         specifier: workspace:*
         version: link:../audit-core
 
   packages/audit-sink-http:
     dependencies:
-      '@hexmon/audit-core':
+      '@hexmon_tech/audit-core':
         specifier: workspace:*
         version: link:../audit-core
 
   packages/audit-sink-mongodb:
     dependencies:
-      '@hexmon/audit-core':
+      '@hexmon_tech/audit-core':
         specifier: workspace:*
         version: link:../audit-core
       mongodb:
@@ -169,7 +169,7 @@ importers:
 
   packages/audit-sink-postgres:
     dependencies:
-      '@hexmon/audit-core':
+      '@hexmon_tech/audit-core':
         specifier: workspace:*
         version: link:../audit-core
       pg:

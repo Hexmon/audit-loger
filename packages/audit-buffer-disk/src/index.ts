@@ -8,9 +8,9 @@ import type {
   AuditSink,
   WriteFailure,
   WriteResult,
-} from '@hexmon/audit-core';
+} from '@hexmon_tech/audit-core';
 
-export const PACKAGE_NAME = '@hexmon/audit-buffer-disk';
+export const PACKAGE_NAME = '@hexmon_tech/audit-buffer-disk';
 
 export type DiskBufferConfig = {
   filePath: string;
@@ -219,7 +219,7 @@ export const createDiskBuffer = (config: DiskBufferConfig): DiskBufferSink => {
           failed += batch.length;
           rebuffer.push(...batch);
           const failureMessages = result.failures
-            .map((failure) => failure.message)
+            .map((failure: WriteFailure) => failure.message)
             .filter(Boolean);
           if (failureMessages.length > 0) {
             errors.push(...failureMessages);

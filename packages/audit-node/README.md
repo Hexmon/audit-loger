@@ -1,4 +1,4 @@
-# @hexmon/audit-node
+# @hexmon_tech/audit-node
 
 Node-only helpers for audit logging integrations. Provides an AsyncLocalStorage-backed
 context store so request metadata can flow through async calls without manual threading.
@@ -6,7 +6,7 @@ context store so request metadata can flow through async calls without manual th
 ## Usage
 
 ```ts
-import { runWithAuditContext, getAuditContext, setAuditContextPartial } from '@hexmon/audit-node';
+import { runWithAuditContext, getAuditContext, setAuditContextPartial } from '@hexmon_tech/audit-node';
 
 runWithAuditContext({ requestId: 'req-123', tenantId: 'tenant-1' }, async () => {
   // Access anywhere in the async call tree

@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { NextRequest } from 'next/server';
-import type { AuditEvent, AuditSink } from '@hexmon/audit-core';
-import { createAuditLogger } from '@hexmon/audit-core';
-import { getAuditContext } from '@hexmon/audit-node';
+import type { AuditEvent, AuditSink } from '@hexmon_tech/audit-core';
+import { createAuditLogger } from '@hexmon_tech/audit-core';
+import { getAuditContext } from '@hexmon_tech/audit-node';
 import { getClientIp, getRequestId, getUserAgent, withAudit } from './index';
 
 describe('next audit helpers', () => {

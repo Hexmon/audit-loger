@@ -1,4 +1,4 @@
-# @hexmon/audit-next
+# @hexmon_tech/audit-next
 
 Next.js App Router helpers for audit logging. Provides a `withAudit` wrapper that
 attaches `req.audit` and captures request context.
@@ -6,8 +6,8 @@ attaches `req.audit` and captures request context.
 ## Usage
 
 ```ts
-import { createAuditLogger } from '@hexmon/audit-core';
-import { withAudit } from '@hexmon/audit-next';
+import { createAuditLogger } from '@hexmon_tech/audit-core';
+import { withAudit } from '@hexmon_tech/audit-next';
 
 const audit = createAuditLogger({ service: 'api', environment: 'dev' });
 
@@ -30,9 +30,9 @@ The wrapper captures:
 - `route` and `method` (added to event metadata under `metadata.http`)
 
 ## Node vs Edge
-`withAudit` uses `@hexmon/audit-node` (AsyncLocalStorage) when running in
+`withAudit` uses `@hexmon_tech/audit-node` (AsyncLocalStorage) when running in
 Node.js. Edge runtimes do not support `AsyncLocalStorage`.
-Install `@hexmon/audit-node` in Node.js deployments to enable context propagation.
+Install `@hexmon_tech/audit-node` in Node.js deployments to enable context propagation.
 
 If you use the Edge runtime:
 - Set `runtime: 'edge'` in the options.

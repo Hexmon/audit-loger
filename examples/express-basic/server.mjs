@@ -2,10 +2,10 @@ import { randomUUID } from 'node:crypto';
 import { mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 import express from 'express';
-import { createAuditLogger, onPremSelfHosted } from '@hexmon/audit-core';
-import { createAuditMiddleware } from '@hexmon/audit-express';
-import { createFileJsonlSink } from '@hexmon/audit-sink-file-jsonl';
-import { createHttpAuditSink } from '@hexmon/audit-sink-http';
+import { createAuditLogger, onPremSelfHosted } from '@hexmon_tech/audit-core';
+import { createAuditMiddleware } from '@hexmon_tech/audit-express';
+import { createFileJsonlSink } from '@hexmon_tech/audit-sink-file-jsonl';
+import { createHttpAuditSink } from '@hexmon_tech/audit-sink-http';
 
 const outputDir = join(process.cwd(), 'tmp');
 mkdirSync(outputDir, { recursive: true });

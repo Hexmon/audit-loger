@@ -1,6 +1,6 @@
 # Express Basic Example
 
-Minimal Express integration using `@hexmon/audit-express`.
+Minimal Express integration using `@hexmon_tech/audit-express`.
 
 ## Run
 1) Install dependencies at the repo root.

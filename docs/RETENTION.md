@@ -57,4 +57,4 @@ Common filters for audit viewers:
   ORDER BY occurred_at ASC;
   ```
 
-For application usage, see `@hexmon/audit-export-postgres` for a typed export helper.
+For application usage, see `@hexmon_tech/audit-export-postgres` for a typed export helper.

@@ -1,7 +1,7 @@
 import { createServer, IncomingMessage, ServerResponse } from 'node:http';
 import type { AddressInfo } from 'node:net';
 import { describe, expect, it } from 'vitest';
-import type { AuditEvent } from '@hexmon/audit-core';
+import type { AuditEvent } from '@hexmon_tech/audit-core';
 import { createHttpAuditSink } from './index';
 
 const baseEvent: AuditEvent = {

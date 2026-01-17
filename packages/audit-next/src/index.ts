@@ -1,7 +1,7 @@
-import type { AuditActor, AuditContext, AuditLogger } from '@hexmon/audit-core';
+import type { AuditActor, AuditContext, AuditLogger } from '@hexmon_tech/audit-core';
 import type { NextRequest } from 'next/server';
 
-export const PACKAGE_NAME = '@hexmon/audit-next';
+export const PACKAGE_NAME = '@hexmon_tech/audit-next';
 
 export type NextAuditRuntime = 'nodejs' | 'edge';
 
@@ -188,7 +188,7 @@ export const withAudit =
     }
 
     try {
-      const { runWithAuditContext, getAuditContext } = await import('@hexmon/audit-node');
+      const { runWithAuditContext, getAuditContext } = await import('@hexmon_tech/audit-node');
       return runWithAuditContext(requestContext, () => handle(getAuditContext));
     } catch {
       return handle(() => requestContext);

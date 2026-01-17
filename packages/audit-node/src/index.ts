@@ -1,6 +1,6 @@
 import { AsyncLocalStorage } from 'node:async_hooks';
 
-export const PACKAGE_NAME = '@hexmon/audit-node';
+export const PACKAGE_NAME = '@hexmon_tech/audit-node';
 
 export type AuditContextStore = {
   requestId?: string;

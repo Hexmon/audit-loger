@@ -1,9 +1,16 @@
 import type { NextFunction, Request, Response } from 'express';
-import type { AuditActor, AuditContext, AuditLogger } from '@hexmon/audit-core';
-import type { AuditContextStore } from '@hexmon/audit-node';
-import { getAuditContext, runWithAuditContext } from '@hexmon/audit-node';
+import type {
+  AuditActor,
+  AuditContext,
+  AuditEventInput,
+  AuditLogger,
+  AuditLoggerChildOptions,
+  AuditLogResult,
+} from '@hexmon_tech/audit-core';
+import type { AuditContextStore } from '@hexmon_tech/audit-node';
+import { getAuditContext, runWithAuditContext } from '@hexmon_tech/audit-node';
 
-export const PACKAGE_NAME = '@hexmon/audit-express';
+export const PACKAGE_NAME = '@hexmon_tech/audit-express';
 
 export type ExpressAuditMiddlewareOptions = {
   getActor?: (req: Request) => AuditActor | undefined;
@@ -100,7 +107,7 @@ const createContextualLogger = (
   getStore: () => AuditContextStore,
   actorDefaults?: AuditActor,
 ): AuditLogger => ({
-  log: (input) => {
+  log: (input: AuditEventInput): Promise<AuditLogResult> => {
     const store = getStore();
     const contextDefaults = buildContextFromStore(store);
     const mergedContext = input.context
@@ -137,7 +144,8 @@ const createContextualLogger = (
   },
   flush: () => base.flush(),
   shutdown: () => base.shutdown(),
-  child: (options) => createContextualLogger(base.child(options), getStore, actorDefaults),
+  child: (options: AuditLoggerChildOptions) =>
+    createContextualLogger(base.child(options), getStore, actorDefaults),
   getStats: () => base.getStats(),
   getMetrics: () => base.getMetrics(),
   getMetricsPrometheus: () => base.getMetricsPrometheus(),

@@ -1,5 +1,5 @@
 import { Client, Pool } from 'pg';
-import type { AuditEvent, AuditOutcome } from '@hexmon/audit-core';
+import type { AuditEvent, AuditOutcome } from '@hexmon_tech/audit-core';
 
 export type ExportFormat = 'json' | 'csv';
 

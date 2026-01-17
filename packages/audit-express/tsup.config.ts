@@ -9,7 +9,7 @@ export default defineConfig({
   clean: true,
   outDir: 'dist',
   treeshake: true,
-  external: ['express', '@hexmon/audit-core', '@hexmon/audit-node'],
+  external: ['express', '@hexmon_tech/audit-core', '@hexmon_tech/audit-node'],
   outExtension({ format }) {
     return { js: format === 'esm' ? '.mjs' : '.cjs' };
   }

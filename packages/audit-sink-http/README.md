@@ -1,10 +1,10 @@
-# @hexmon/audit-sink-http
+# @hexmon_tech/audit-sink-http
 
 Edge-friendly HTTP sink that POSTs audit event batches to a remote endpoint.
 
 ## Usage
 ```ts
-import { createHttpAuditSink } from '@hexmon/audit-sink-http';
+import { createHttpAuditSink } from '@hexmon_tech/audit-sink-http';
 
 const sink = createHttpAuditSink({
   endpoint: 'https://audit.example.com/batch',

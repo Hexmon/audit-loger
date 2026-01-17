@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { MongoClient } from 'mongodb';
-import type { AuditEvent } from '@hexmon/audit-core';
+import type { AuditEvent } from '@hexmon_tech/audit-core';
 import { createMongoAuditSink } from './index';
 
 const MONGO_URL = process.env.TEST_MONGO_URL;

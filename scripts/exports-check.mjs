@@ -36,7 +36,7 @@ const loadPackages = () => {
 
 const expectedExports = new Map([
   [
-    '@hexmon/audit-core',
+    '@hexmon_tech/audit-core',
     [
       'createAuditLogger',
       'multiSink',
@@ -45,19 +45,19 @@ const expectedExports = new Map([
       'computeIntegrityHash',
     ],
   ],
-  ['@hexmon/audit-node', ['runWithAuditContext', 'getAuditContext', 'setAuditContextPartial']],
-  ['@hexmon/audit-express', ['createAuditMiddleware']],
-  ['@hexmon/audit-next', ['withAudit']],
-  ['@hexmon/audit-cli', ['verifyFile', 'verifyPostgres']],
+  ['@hexmon_tech/audit-node', ['runWithAuditContext', 'getAuditContext', 'setAuditContextPartial']],
+  ['@hexmon_tech/audit-express', ['createAuditMiddleware']],
+  ['@hexmon_tech/audit-next', ['withAudit']],
+  ['@hexmon_tech/audit-cli', ['verifyFile', 'verifyPostgres']],
   [
-    '@hexmon/audit-export-postgres',
+    '@hexmon_tech/audit-export-postgres',
     ['exportAuditLogs', 'buildExportQuery', 'encodeCursor', 'decodeCursor'],
   ],
-  ['@hexmon/audit-sink-http', ['createHttpAuditSink']],
-  ['@hexmon/audit-sink-postgres', ['createPostgresAuditSink']],
-  ['@hexmon/audit-sink-mongodb', ['createMongoAuditSink']],
-  ['@hexmon/audit-sink-file-jsonl', ['createFileJsonlSink']],
-  ['@hexmon/audit-buffer-disk', ['createDiskBuffer']],
+  ['@hexmon_tech/audit-sink-http', ['createHttpAuditSink']],
+  ['@hexmon_tech/audit-sink-postgres', ['createPostgresAuditSink']],
+  ['@hexmon_tech/audit-sink-mongodb', ['createMongoAuditSink']],
+  ['@hexmon_tech/audit-sink-file-jsonl', ['createFileJsonlSink']],
+  ['@hexmon_tech/audit-buffer-disk', ['createDiskBuffer']],
 ]);
 
 const run = async () => {

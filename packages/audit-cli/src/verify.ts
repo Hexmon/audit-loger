@@ -1,13 +1,13 @@
 import { createReadStream } from 'node:fs';
 import { createInterface } from 'node:readline';
 import { Client } from 'pg';
-import { computeIntegrityHash, getIntegrityScopeKey } from '@hexmon/audit-core';
+import { computeIntegrityHash, getIntegrityScopeKey } from '@hexmon_tech/audit-core';
 import type {
   AuditActor,
   AuditContext,
   AuditEvent,
   AuditTarget,
-} from '@hexmon/audit-core';
+} from '@hexmon_tech/audit-core';
 
 export type VerifyFailure = {
   index: number;

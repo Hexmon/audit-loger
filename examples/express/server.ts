@@ -2,9 +2,9 @@ import { randomUUID } from 'node:crypto';
 import { mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 import express, { type Request } from 'express';
-import { createAuditLogger, highThroughput } from '@hexmon/audit-core';
-import { createAuditMiddleware } from '@hexmon/audit-express';
-import { createFileJsonlSink } from '@hexmon/audit-sink-file-jsonl';
+import { createAuditLogger, highThroughput } from '@hexmon_tech/audit-core';
+import { createAuditMiddleware } from '@hexmon_tech/audit-express';
+import { createFileJsonlSink } from '@hexmon_tech/audit-sink-file-jsonl';
 
 type AuthedRequest = Request & { user?: { id: string; roles?: string[] } };
 

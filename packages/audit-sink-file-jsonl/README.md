@@ -1,10 +1,10 @@
-# @hexmon/audit-sink-file-jsonl
+# @hexmon_tech/audit-sink-file-jsonl
 
 Append-only JSONL file sink for Node.js environments.
 
 ## Usage
 ```ts
-import { createFileJsonlSink } from '@hexmon/audit-sink-file-jsonl';
+import { createFileJsonlSink } from '@hexmon_tech/audit-sink-file-jsonl';
 
 const sink = createFileJsonlSink({
   filePath: '/var/log/audit.jsonl',

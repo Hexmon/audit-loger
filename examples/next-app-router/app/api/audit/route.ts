@@ -1,5 +1,5 @@
-import { createAuditLogger } from '@hexmon/audit-core';
-import { withAudit } from '@hexmon/audit-next';
+import { createAuditLogger } from '@hexmon_tech/audit-core';
+import { withAudit } from '@hexmon_tech/audit-next';
 
 const audit = createAuditLogger({
   service: 'next-app',

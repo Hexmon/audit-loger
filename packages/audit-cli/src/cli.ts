@@ -1,5 +1,5 @@
 import { Client } from 'pg';
-import { exportAuditLogs } from '@hexmon/audit-export-postgres';
+import { exportAuditLogs } from '@hexmon_tech/audit-export-postgres';
 import { verifyFile, verifyPostgres } from './verify';
 
 const printHelp = () => {

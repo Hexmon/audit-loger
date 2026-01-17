@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { Pool } from 'pg';
-import type { AuditEvent } from '@hexmon/audit-core';
+import type { AuditEvent } from '@hexmon_tech/audit-core';
 import { createPostgresAuditSink } from './index';
 
 const connectionString = process.env.PG_TEST_URL ?? process.env.TEST_POSTGRES_URL;

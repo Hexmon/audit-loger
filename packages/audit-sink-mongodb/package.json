@@ -1,5 +1,5 @@
 {
-  "name": "@hexmon/audit-sink-mongodb",
+  "name": "@hexmon_tech/audit-sink-mongodb",
   "version": "0.0.0",
   "private": false,
   "type": "module",
@@ -27,18 +27,18 @@
     "test": "vitest --run --config ./vitest.config.ts",
     "lint": "eslint src --max-warnings 0",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "exports:check": "node ../../scripts/exports-check.mjs --package @hexmon/audit-sink-mongodb",
-    "pack:check": "node ../../scripts/pack-check.mjs --package @hexmon/audit-sink-mongodb"
+    "exports:check": "node ../../scripts/exports-check.mjs --package @hexmon_tech/audit-sink-mongodb",
+    "pack:check": "node ../../scripts/pack-check.mjs --package @hexmon_tech/audit-sink-mongodb"
   },
   "dependencies": {
-    "@hexmon/audit-core": "workspace:*",
+    "@hexmon_tech/audit-core": "workspace:*",
     "mongodb": "^6.8.0"
   },
   "description": "MongoDB sink for audit event storage with idempotent inserts.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hexmon/audit-log.git"
+    "url": "https://github.com/hexmon_tech/audit-log.git"
   },
   "keywords": [
     "audit",

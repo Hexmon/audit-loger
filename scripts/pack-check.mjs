@@ -47,7 +47,7 @@ const parsePackOutput = (output) => {
 };
 
 const extraAllowed = {
-  '@hexmon/audit-sink-postgres': ['migrations/'],
+  '@hexmon_tech/audit-sink-postgres': ['migrations/'],
 };
 
 const run = () => {
@@ -113,7 +113,7 @@ const run = () => {
     if (!files.includes('LICENSE') && !files.includes('LICENSE.md')) {
       errors.push('Missing LICENSE in package tarball');
     }
-    if (pkg.name === '@hexmon/audit-sink-postgres') {
+    if (pkg.name === '@hexmon_tech/audit-sink-postgres') {
       if (!files.some((file) => file.startsWith('migrations/'))) {
         errors.push('Missing migrations/ in package tarball');
       }

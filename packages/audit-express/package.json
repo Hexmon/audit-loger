@@ -1,5 +1,5 @@
 {
-  "name": "@hexmon/audit-express",
+  "name": "@hexmon_tech/audit-express",
   "version": "0.0.0",
   "private": false,
   "type": "module",
@@ -23,8 +23,8 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "@hexmon/audit-core": "workspace:*",
-    "@hexmon/audit-node": "workspace:*"
+    "@hexmon_tech/audit-core": "workspace:*",
+    "@hexmon_tech/audit-node": "workspace:*"
   },
   "peerDependencies": {
     "express": "^4.18.2"
@@ -39,14 +39,14 @@
     "test": "vitest --run --config ./vitest.config.ts",
     "lint": "eslint src --max-warnings 0",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "exports:check": "node ../../scripts/exports-check.mjs --package @hexmon/audit-express",
-    "pack:check": "node ../../scripts/pack-check.mjs --package @hexmon/audit-express"
+    "exports:check": "node ../../scripts/exports-check.mjs --package @hexmon_tech/audit-express",
+    "pack:check": "node ../../scripts/pack-check.mjs --package @hexmon_tech/audit-express"
   },
   "description": "Express middleware for audit logging with request context.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hexmon/audit-log.git"
+    "url": "https://github.com/hexmon_tech/audit-log.git"
   },
   "keywords": [
     "audit",

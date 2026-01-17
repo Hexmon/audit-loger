@@ -1,10 +1,10 @@
-# @hexmon/audit-export-postgres
+# @hexmon_tech/audit-export-postgres
 
 Helpers to export audit logs from Postgres with safe, paginated queries.
 
 ## Usage
 ```ts
-import { exportAuditLogs } from '@hexmon/audit-export-postgres';
+import { exportAuditLogs } from '@hexmon_tech/audit-export-postgres';
 
 const result = await exportAuditLogs({
   connectionString: process.env.DATABASE_URL,

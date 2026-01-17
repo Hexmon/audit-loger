@@ -5,7 +5,7 @@ import type {
   AuditSink,
   WriteFailure,
   WriteResult,
-} from '@hexmon/audit-core';
+} from '@hexmon_tech/audit-core';
 
 export type MongoAuditSinkConfig = {
   uri?: string;

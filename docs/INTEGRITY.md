@@ -33,11 +33,11 @@ const audit = createAuditLogger({
 `signed` requires a signer hook; if none is configured the logger rejects events.
 
 ## Verification
-Use `@hexmon/audit-cli` to verify stored events:
+Use `@hexmon_tech/audit-cli` to verify stored events:
 
 ```bash
-pnpm --filter @hexmon/audit-cli exec audit-cli verify-file --path ./audit.jsonl
-pnpm --filter @hexmon/audit-cli exec audit-cli verify-postgres --connection "..."
+pnpm --filter @hexmon_tech/audit-cli exec audit-cli verify-file --path ./audit.jsonl
+pnpm --filter @hexmon_tech/audit-cli exec audit-cli verify-postgres --connection "..."
 ```
 
 ## Guarantees and Limits

@@ -1,4 +1,4 @@
-export const PACKAGE_NAME = '@hexmon/audit-core';
+export const PACKAGE_NAME = '@hexmon_tech/audit-core';
 
 export type AuditOutcome = 'SUCCESS' | 'FAILURE' | 'DENIED' | 'ERROR';
 

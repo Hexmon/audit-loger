@@ -13,6 +13,21 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@hexmon_tech/audit-core": ["./packages/audit-core/src"],
+      "@hexmon_tech/audit-node": ["./packages/audit-node/src"],
+      "@hexmon_tech/audit-express": ["./packages/audit-express/src"],
+      "@hexmon_tech/audit-next": ["./packages/audit-next/src"],
+      "@hexmon_tech/audit-sink-http": ["./packages/audit-sink-http/src"],
+      "@hexmon_tech/audit-sink-postgres": ["./packages/audit-sink-postgres/src"],
+      "@hexmon_tech/audit-sink-mongodb": ["./packages/audit-sink-mongodb/src"],
+      "@hexmon_tech/audit-sink-file-jsonl": ["./packages/audit-sink-file-jsonl/src"],
+      "@hexmon_tech/audit-buffer-disk": ["./packages/audit-buffer-disk/src"],
+      "@hexmon_tech/audit-export-postgres": ["./packages/audit-export-postgres/src"],
+      "@hexmon_tech/audit-cli": ["./packages/audit-cli/src"]
+    }
   }
 }

@@ -12,5 +12,5 @@ export default defineConfig({
   outExtension({ format }) {
     return { js: format === 'esm' ? '.mjs' : '.cjs' };
   },
-  external: ['@hexmon/audit-core', 'pg'],
+  external: ['@hexmon_tech/audit-core', 'pg'],
 });

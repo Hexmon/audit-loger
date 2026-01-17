@@ -1,5 +1,5 @@
 {
-  "name": "@hexmon/audit-sink-http",
+  "name": "@hexmon_tech/audit-sink-http",
   "version": "0.0.0",
   "private": false,
   "type": "module",
@@ -27,17 +27,17 @@
     "test": "vitest --run --config ./vitest.config.ts",
     "lint": "eslint src --max-warnings 0",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "exports:check": "node ../../scripts/exports-check.mjs --package @hexmon/audit-sink-http",
-    "pack:check": "node ../../scripts/pack-check.mjs --package @hexmon/audit-sink-http"
+    "exports:check": "node ../../scripts/exports-check.mjs --package @hexmon_tech/audit-sink-http",
+    "pack:check": "node ../../scripts/pack-check.mjs --package @hexmon_tech/audit-sink-http"
   },
   "dependencies": {
-    "@hexmon/audit-core": "workspace:*"
+    "@hexmon_tech/audit-core": "workspace:*"
   },
   "description": "HTTP sink for batching audit events to a remote endpoint.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hexmon/audit-log.git"
+    "url": "https://github.com/hexmon_tech/audit-log.git"
   },
   "keywords": [
     "audit",
