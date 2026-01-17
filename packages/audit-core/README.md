@@ -1,11 +1,11 @@
-# @stackio/audit-core
+# @hexmon/audit-core
 
 Runtime-agnostic audit event schema, validation helpers, and policy knobs. This package defines the canonical event shape and developer-facing logger API.
 
 ## Usage
 
 ```ts
-import { createAuditLogger } from '@stackio/audit-core';
+import { createAuditLogger } from '@hexmon/audit-core';
 
 const audit = createAuditLogger({
   service: 'billing-api',
@@ -100,7 +100,7 @@ Input allows partial fields so the core can apply defaults later (e.g., `eventId
 Use presets as a baseline and override per deployment:
 
 ```ts
-import { createAuditLogger, saasMultiTenantStrict } from '@stackio/audit-core';
+import { createAuditLogger, saasMultiTenantStrict } from '@hexmon/audit-core';
 
 const audit = createAuditLogger({
   ...saasMultiTenantStrict(),
@@ -188,9 +188,9 @@ See `docs/PERFORMANCE.md` for batching and throughput tuning.
 
 ## Multi-Sink Usage
 ```ts
-import { createAuditLogger } from '@stackio/audit-core';
-import { createHttpAuditSink } from '@stackio/audit-sink-http';
-import { createPostgresAuditSink } from '@stackio/audit-sink-postgres';
+import { createAuditLogger } from '@hexmon/audit-core';
+import { createHttpAuditSink } from '@hexmon/audit-sink-http';
+import { createPostgresAuditSink } from '@hexmon/audit-sink-postgres';
 
 const httpSink = createHttpAuditSink({ endpoint: 'https://audit.example.com/batch' });
 const pgSink = createPostgresAuditSink({ connectionString: process.env.DATABASE_URL });

@@ -1,4 +1,4 @@
-# @stackio/audit-express
+# @hexmon/audit-express
 
 Express middleware for audit logging. Attaches `req.audit` with request-scoped
 context populated from headers and extractor functions.
@@ -7,8 +7,8 @@ context populated from headers and extractor functions.
 
 ```ts
 import express from 'express';
-import { createAuditLogger } from '@stackio/audit-core';
-import { createAuditMiddleware } from '@stackio/audit-express';
+import { createAuditLogger } from '@hexmon/audit-core';
+import { createAuditMiddleware } from '@hexmon/audit-express';
 
 const app = express();
 const audit = createAuditLogger({ service: 'api', environment: 'dev' });

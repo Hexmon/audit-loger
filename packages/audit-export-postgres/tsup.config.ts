@@ -12,5 +12,5 @@ export default defineConfig({
   outExtension({ format }) {
     return { js: format === 'esm' ? '.mjs' : '.cjs' };
   },
-  external: ['@stackio/audit-core', 'pg'],
+  external: ['@hexmon/audit-core', 'pg'],
 });

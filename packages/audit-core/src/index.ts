@@ -1,4 +1,4 @@
-export const PACKAGE_NAME = '@stackio/audit-core';
+export const PACKAGE_NAME = '@hexmon/audit-core';
 
 export type AuditOutcome = 'SUCCESS' | 'FAILURE' | 'DENIED' | 'ERROR';
 

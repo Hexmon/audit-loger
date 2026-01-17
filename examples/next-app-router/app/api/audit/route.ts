@@ -1,5 +1,5 @@
-import { createAuditLogger } from '@stackio/audit-core';
-import { withAudit } from '@stackio/audit-next';
+import { createAuditLogger } from '@hexmon/audit-core';
+import { withAudit } from '@hexmon/audit-next';
 
 const audit = createAuditLogger({
   service: 'next-app',

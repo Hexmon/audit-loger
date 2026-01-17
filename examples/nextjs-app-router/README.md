@@ -1,6 +1,6 @@
 # Next.js App Router Example
 
-Minimal App Router handler using `@stackio/audit-next`.
+Minimal App Router handler using `@hexmon/audit-next`.
 
 ## Setup
 Create a Next.js app and copy the `app/api/login/route.ts` file into your project.

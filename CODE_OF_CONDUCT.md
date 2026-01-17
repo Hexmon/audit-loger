@@ -9,4 +9,4 @@ Treat others with respect and kindness. Harassment and discriminatory behavior a
 Assume good intent, give constructive feedback, and focus on the best outcome.
 
 ## Reporting
-If you experience or witness unacceptable behavior, contact maintainers at conduct@stackio.example.
+If you experience or witness unacceptable behavior, contact maintainers at conduct@hexmon.example.

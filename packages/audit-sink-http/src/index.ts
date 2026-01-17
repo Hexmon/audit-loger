@@ -1,4 +1,4 @@
-import type { AuditEvent, AuditErrorType, AuditSink, WriteFailure, WriteResult } from '@stackio/audit-core';
+import type { AuditEvent, AuditErrorType, AuditSink, WriteFailure, WriteResult } from '@hexmon/audit-core';
 
 export type HttpAuditSinkConfig = {
   endpoint: string;

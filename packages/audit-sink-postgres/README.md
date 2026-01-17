@@ -1,10 +1,10 @@
-# @stackio/audit-sink-postgres
+# @hexmon/audit-sink-postgres
 
 Postgres sink using the `pg` driver with idempotent inserts via `event_id`.
 
 ## Usage
 ```ts
-import { createPostgresAuditSink } from '@stackio/audit-sink-postgres';
+import { createPostgresAuditSink } from '@hexmon/audit-sink-postgres';
 
 const sink = createPostgresAuditSink({
   connectionString: process.env.DATABASE_URL,

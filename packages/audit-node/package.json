@@ -1,5 +1,5 @@
 {
-  "name": "@stackio/audit-node",
+  "name": "@hexmon/audit-node",
   "version": "0.0.0",
   "private": false,
   "type": "module",
@@ -27,14 +27,14 @@
     "test": "vitest --run --config ./vitest.config.ts",
     "lint": "eslint src --max-warnings 0",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "exports:check": "node ../../scripts/exports-check.mjs --package @stackio/audit-node",
-    "pack:check": "node ../../scripts/pack-check.mjs --package @stackio/audit-node"
+    "exports:check": "node ../../scripts/exports-check.mjs --package @hexmon/audit-node",
+    "pack:check": "node ../../scripts/pack-check.mjs --package @hexmon/audit-node"
   },
   "description": "Node.js context helpers for audit logging.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stackio/audit-log.git"
+    "url": "https://github.com/hexmon/audit-log.git"
   },
   "keywords": [
     "audit",

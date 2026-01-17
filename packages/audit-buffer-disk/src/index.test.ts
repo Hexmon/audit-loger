@@ -2,7 +2,7 @@ import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, describe, expect, it } from 'vitest';
-import type { AuditEvent, AuditSink } from '@stackio/audit-core';
+import type { AuditEvent, AuditSink } from '@hexmon/audit-core';
 import { PACKAGE_NAME, createDiskBuffer } from './index';
 
 const baseEvent: AuditEvent = {
@@ -35,7 +35,7 @@ afterEach(async () => {
 
 describe('audit-buffer-disk', () => {
   it('exports the package name', () => {
-    expect(PACKAGE_NAME).toBe('@stackio/audit-buffer-disk');
+    expect(PACKAGE_NAME).toBe('@hexmon/audit-buffer-disk');
   });
 
   it('buffers events and drains to a target sink', async () => {

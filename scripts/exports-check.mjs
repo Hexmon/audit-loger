@@ -36,7 +36,7 @@ const loadPackages = () => {
 
 const expectedExports = new Map([
   [
-    '@stackio/audit-core',
+    '@hexmon/audit-core',
     [
       'createAuditLogger',
       'multiSink',
@@ -45,19 +45,19 @@ const expectedExports = new Map([
       'computeIntegrityHash',
     ],
   ],
-  ['@stackio/audit-node', ['runWithAuditContext', 'getAuditContext', 'setAuditContextPartial']],
-  ['@stackio/audit-express', ['createAuditMiddleware']],
-  ['@stackio/audit-next', ['withAudit']],
-  ['@stackio/audit-cli', ['verifyFile', 'verifyPostgres']],
+  ['@hexmon/audit-node', ['runWithAuditContext', 'getAuditContext', 'setAuditContextPartial']],
+  ['@hexmon/audit-express', ['createAuditMiddleware']],
+  ['@hexmon/audit-next', ['withAudit']],
+  ['@hexmon/audit-cli', ['verifyFile', 'verifyPostgres']],
   [
-    '@stackio/audit-export-postgres',
+    '@hexmon/audit-export-postgres',
     ['exportAuditLogs', 'buildExportQuery', 'encodeCursor', 'decodeCursor'],
   ],
-  ['@stackio/audit-sink-http', ['createHttpAuditSink']],
-  ['@stackio/audit-sink-postgres', ['createPostgresAuditSink']],
-  ['@stackio/audit-sink-mongodb', ['createMongoAuditSink']],
-  ['@stackio/audit-sink-file-jsonl', ['createFileJsonlSink']],
-  ['@stackio/audit-buffer-disk', ['createDiskBuffer']],
+  ['@hexmon/audit-sink-http', ['createHttpAuditSink']],
+  ['@hexmon/audit-sink-postgres', ['createPostgresAuditSink']],
+  ['@hexmon/audit-sink-mongodb', ['createMongoAuditSink']],
+  ['@hexmon/audit-sink-file-jsonl', ['createFileJsonlSink']],
+  ['@hexmon/audit-buffer-disk', ['createDiskBuffer']],
 ]);
 
 const run = async () => {

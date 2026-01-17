@@ -1,5 +1,5 @@
 {
-  "name": "@stackio/audit-buffer-disk",
+  "name": "@hexmon/audit-buffer-disk",
   "version": "0.0.0",
   "private": false,
   "type": "module",
@@ -27,14 +27,14 @@
     "test": "vitest --run --config ./vitest.config.ts",
     "lint": "eslint src --max-warnings 0",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "exports:check": "node ../../scripts/exports-check.mjs --package @stackio/audit-buffer-disk",
-    "pack:check": "node ../../scripts/pack-check.mjs --package @stackio/audit-buffer-disk"
+    "exports:check": "node ../../scripts/exports-check.mjs --package @hexmon/audit-buffer-disk",
+    "pack:check": "node ../../scripts/pack-check.mjs --package @hexmon/audit-buffer-disk"
   },
   "description": "Disk-backed buffer for audit events with replay support.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stackio/audit-log.git"
+    "url": "https://github.com/hexmon/audit-log.git"
   },
   "keywords": [
     "audit",
@@ -47,6 +47,6 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "@stackio/audit-core": "workspace:*"
+    "@hexmon/audit-core": "workspace:*"
   }
 }

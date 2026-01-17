@@ -9,7 +9,7 @@ Audit logs often include sensitive data. This project defaults to redaction and 
 - Unredacted PII (unless strictly required and approved)
 
 ## Redaction Defaults
-Redaction is enabled by default in `@stackio/audit-core`.
+Redaction is enabled by default in `@hexmon/audit-core`.
 
 Default redaction keys:
 - password

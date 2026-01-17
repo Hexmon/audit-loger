@@ -1,5 +1,5 @@
 {
-  "name": "@stackio/audit-next",
+  "name": "@hexmon/audit-next",
   "version": "0.0.0",
   "private": false,
   "type": "module",
@@ -23,21 +23,21 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "@stackio/audit-core": "workspace:*"
+    "@hexmon/audit-core": "workspace:*"
   },
   "peerDependencies": {
-    "@stackio/audit-node": "workspace:*",
+    "@hexmon/audit-node": "workspace:*",
     "next": "^16.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
   "peerDependenciesMeta": {
-    "@stackio/audit-node": {
+    "@hexmon/audit-node": {
       "optional": true
     }
   },
   "devDependencies": {
-    "@stackio/audit-node": "workspace:*",
+    "@hexmon/audit-node": "workspace:*",
     "next": "16.1.1",
     "react": "18.3.1",
     "react-dom": "18.3.1"
@@ -47,14 +47,14 @@
     "test": "vitest --run --config ./vitest.config.ts",
     "lint": "eslint src --max-warnings 0",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "exports:check": "node ../../scripts/exports-check.mjs --package @stackio/audit-next",
-    "pack:check": "node ../../scripts/pack-check.mjs --package @stackio/audit-next"
+    "exports:check": "node ../../scripts/exports-check.mjs --package @hexmon/audit-next",
+    "pack:check": "node ../../scripts/pack-check.mjs --package @hexmon/audit-next"
   },
   "description": "Next.js App Router helpers for audit logging.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stackio/audit-log.git"
+    "url": "https://github.com/hexmon/audit-log.git"
   },
   "keywords": [
     "audit",

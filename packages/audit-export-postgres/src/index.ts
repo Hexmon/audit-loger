@@ -1,5 +1,5 @@
 import { Client, Pool } from 'pg';
-import type { AuditEvent, AuditOutcome } from '@stackio/audit-core';
+import type { AuditEvent, AuditOutcome } from '@hexmon/audit-core';
 
 export type ExportFormat = 'json' | 'csv';
 

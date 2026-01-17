@@ -1,13 +1,13 @@
-# @stackio/audit-buffer-disk
+# @hexmon/audit-buffer-disk
 
 Disk-backed buffer for audit events in Node.js. Use this sink to persist events
 locally and replay them to another sink when it becomes available.
 
 ## Usage
 ```ts
-import { createAuditLogger } from '@stackio/audit-core';
-import { createDiskBuffer } from '@stackio/audit-buffer-disk';
-import { createHttpAuditSink } from '@stackio/audit-sink-http';
+import { createAuditLogger } from '@hexmon/audit-core';
+import { createDiskBuffer } from '@hexmon/audit-buffer-disk';
+import { createHttpAuditSink } from '@hexmon/audit-sink-http';
 
 const buffer = createDiskBuffer({
   filePath: './tmp/audit-buffer.jsonl',

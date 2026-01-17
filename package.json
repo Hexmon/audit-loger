@@ -1,12 +1,12 @@
 {
-  "name": "@stackio/audit-log",
+  "name": "@hexmon/audit-log",
   "version": "0.0.0",
   "private": true,
   "description": "Enterprise-grade audit logging monorepo for JS/TS.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stackio/audit-log.git"
+    "url": "https://github.com/hexmon/audit-log.git"
   },
   "keywords": [
     "audit",
@@ -40,11 +40,11 @@
     "@types/node": "^20.14.10",
     "@typescript-eslint/eslint-plugin": "^8.52.0",
     "@typescript-eslint/parser": "^8.52.0",
-    "@stackio/audit-core": "workspace:*",
-    "@stackio/audit-express": "workspace:*",
-    "@stackio/audit-next": "workspace:*",
-    "@stackio/audit-sink-file-jsonl": "workspace:*",
-    "@stackio/audit-sink-http": "workspace:*",
+    "@hexmon/audit-core": "workspace:*",
+    "@hexmon/audit-express": "workspace:*",
+    "@hexmon/audit-next": "workspace:*",
+    "@hexmon/audit-sink-file-jsonl": "workspace:*",
+    "@hexmon/audit-sink-http": "workspace:*",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "express": "^4.18.2",

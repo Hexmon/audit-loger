@@ -17,19 +17,19 @@ importers:
       '@eslint/js':
         specifier: ^9.39.2
         version: 9.39.2
-      '@stackio/audit-core':
+      '@hexmon/audit-core':
         specifier: workspace:*
         version: link:packages/audit-core
-      '@stackio/audit-express':
+      '@hexmon/audit-express':
         specifier: workspace:*
         version: link:packages/audit-express
-      '@stackio/audit-next':
+      '@hexmon/audit-next':
         specifier: workspace:*
         version: link:packages/audit-next
-      '@stackio/audit-sink-file-jsonl':
+      '@hexmon/audit-sink-file-jsonl':
         specifier: workspace:*
         version: link:packages/audit-sink-file-jsonl
-      '@stackio/audit-sink-http':
+      '@hexmon/audit-sink-http':
         specifier: workspace:*
         version: link:packages/audit-sink-http
       '@types/node':
@@ -68,16 +68,16 @@ importers:
 
   packages/audit-buffer-disk:
     dependencies:
-      '@stackio/audit-core':
+      '@hexmon/audit-core':
         specifier: workspace:*
         version: link:../audit-core
 
   packages/audit-cli:
     dependencies:
-      '@stackio/audit-core':
+      '@hexmon/audit-core':
         specifier: workspace:*
         version: link:../audit-core
-      '@stackio/audit-export-postgres':
+      '@hexmon/audit-export-postgres':
         specifier: workspace:*
         version: link:../audit-export-postgres
       pg:
@@ -92,7 +92,7 @@ importers:
 
   packages/audit-export-postgres:
     dependencies:
-      '@stackio/audit-core':
+      '@hexmon/audit-core':
         specifier: workspace:*
         version: link:../audit-core
       pg:
@@ -105,10 +105,10 @@ importers:
 
   packages/audit-express:
     dependencies:
-      '@stackio/audit-core':
+      '@hexmon/audit-core':
         specifier: workspace:*
         version: link:../audit-core
-      '@stackio/audit-node':
+      '@hexmon/audit-node':
         specifier: workspace:*
         version: link:../audit-node
       express:
@@ -127,11 +127,11 @@ importers:
 
   packages/audit-next:
     dependencies:
-      '@stackio/audit-core':
+      '@hexmon/audit-core':
         specifier: workspace:*
         version: link:../audit-core
     devDependencies:
-      '@stackio/audit-node':
+      '@hexmon/audit-node':
         specifier: workspace:*
         version: link:../audit-node
       next:
@@ -148,19 +148,19 @@ importers:
 
   packages/audit-sink-file-jsonl:
     dependencies:
-      '@stackio/audit-core':
+      '@hexmon/audit-core':
         specifier: workspace:*
         version: link:../audit-core
 
   packages/audit-sink-http:
     dependencies:
-      '@stackio/audit-core':
+      '@hexmon/audit-core':
         specifier: workspace:*
         version: link:../audit-core
 
   packages/audit-sink-mongodb:
     dependencies:
-      '@stackio/audit-core':
+      '@hexmon/audit-core':
         specifier: workspace:*
         version: link:../audit-core
       mongodb:
@@ -169,7 +169,7 @@ importers:
 
   packages/audit-sink-postgres:
     dependencies:
-      '@stackio/audit-core':
+      '@hexmon/audit-core':
         specifier: workspace:*
         version: link:../audit-core
       pg:

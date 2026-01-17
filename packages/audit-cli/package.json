@@ -1,5 +1,5 @@
 {
-  "name": "@stackio/audit-cli",
+  "name": "@hexmon/audit-cli",
   "version": "0.0.0",
   "private": false,
   "type": "module",
@@ -30,12 +30,12 @@
     "test": "vitest --run --config ./vitest.config.ts",
     "lint": "eslint src --max-warnings 0",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "exports:check": "node ../../scripts/exports-check.mjs --package @stackio/audit-cli",
-    "pack:check": "node ../../scripts/pack-check.mjs --package @stackio/audit-cli"
+    "exports:check": "node ../../scripts/exports-check.mjs --package @hexmon/audit-cli",
+    "pack:check": "node ../../scripts/pack-check.mjs --package @hexmon/audit-cli"
   },
   "dependencies": {
-    "@stackio/audit-core": "workspace:*",
-    "@stackio/audit-export-postgres": "workspace:*",
+    "@hexmon/audit-core": "workspace:*",
+    "@hexmon/audit-export-postgres": "workspace:*",
     "pg": "^8.12.0"
   },
   "devDependencies": {
@@ -45,7 +45,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stackio/audit-log.git"
+    "url": "https://github.com/hexmon/audit-log.git"
   },
   "keywords": [
     "audit",

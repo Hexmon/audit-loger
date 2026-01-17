@@ -8,9 +8,9 @@ import type {
   AuditSink,
   WriteFailure,
   WriteResult,
-} from '@stackio/audit-core';
+} from '@hexmon/audit-core';
 
-export const PACKAGE_NAME = '@stackio/audit-buffer-disk';
+export const PACKAGE_NAME = '@hexmon/audit-buffer-disk';
 
 export type DiskBufferConfig = {
   filePath: string;

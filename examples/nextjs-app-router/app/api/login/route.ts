@@ -1,5 +1,5 @@
-import { createAuditLogger, saasMultiTenantStrict } from '@stackio/audit-core';
-import { withAudit } from '@stackio/audit-next';
+import { createAuditLogger, saasMultiTenantStrict } from '@hexmon/audit-core';
+import { withAudit } from '@hexmon/audit-next';
 
 const audit = createAuditLogger({
   ...saasMultiTenantStrict(),

@@ -1,13 +1,13 @@
 import { createReadStream } from 'node:fs';
 import { createInterface } from 'node:readline';
 import { Client } from 'pg';
-import { computeIntegrityHash, getIntegrityScopeKey } from '@stackio/audit-core';
+import { computeIntegrityHash, getIntegrityScopeKey } from '@hexmon/audit-core';
 import type {
   AuditActor,
   AuditContext,
   AuditEvent,
   AuditTarget,
-} from '@stackio/audit-core';
+} from '@hexmon/audit-core';
 
 export type VerifyFailure = {
   index: number;

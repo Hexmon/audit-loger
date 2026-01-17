@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { Client } from 'pg';
-import type { AuditEvent } from '@stackio/audit-core';
+import type { AuditEvent } from '@hexmon/audit-core';
 import { createPostgresAuditSink } from './index';
 
 const POSTGRES_URL = process.env.TEST_POSTGRES_URL;

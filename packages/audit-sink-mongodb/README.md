@@ -1,10 +1,10 @@
-# @stackio/audit-sink-mongodb
+# @hexmon/audit-sink-mongodb
 
 MongoDB sink using the official driver with a unique index on `eventId`.
 
 ## Usage
 ```ts
-import { createMongoAuditSink } from '@stackio/audit-sink-mongodb';
+import { createMongoAuditSink } from '@hexmon/audit-sink-mongodb';
 
 const sink = createMongoAuditSink({
   uri: process.env.MONGO_URL,

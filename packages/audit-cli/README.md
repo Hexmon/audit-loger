@@ -1,4 +1,4 @@
-# @stackio/audit-cli
+# @hexmon/audit-cli
 
 Command-line verification tools for audit log integrity chains.
 
@@ -9,7 +9,7 @@ Command-line verification tools for audit log integrity chains.
 Verify a JSONL file produced by the file sink.
 
 ```bash
-pnpm --filter @stackio/audit-cli exec audit-cli verify-file --path ./audit.jsonl
+pnpm --filter @hexmon/audit-cli exec audit-cli verify-file --path ./audit.jsonl
 ```
 
 ### verify-postgres
@@ -17,7 +17,7 @@ pnpm --filter @stackio/audit-cli exec audit-cli verify-file --path ./audit.jsonl
 Verify audit records stored in Postgres.
 
 ```bash
-pnpm --filter @stackio/audit-cli exec audit-cli verify-postgres \
+pnpm --filter @hexmon/audit-cli exec audit-cli verify-postgres \
   --connection "postgres://user:pass@localhost:5432/audit" \
   --from "2024-01-01" \
   --to "2024-01-31" \
@@ -31,7 +31,7 @@ Optional flags: `--table` (defaults to `audit_events`).
 Export audit records from Postgres (JSON or CSV).
 
 ```bash
-pnpm --filter @stackio/audit-cli exec audit-cli export-postgres \
+pnpm --filter @hexmon/audit-cli exec audit-cli export-postgres \
   --connection "postgres://user:pass@localhost:5432/audit" \
   --from "2024-01-01" \
   --to "2024-01-31" \
@@ -47,7 +47,7 @@ Optional flags: `--actorId`, `--action`, `--outcome`, `--pageSize`, `--cursor`,
 Run a retention delete for records older than a timestamp.
 
 ```bash
-pnpm --filter @stackio/audit-cli exec audit-cli retention-postgres \
+pnpm --filter @hexmon/audit-cli exec audit-cli retention-postgres \
   --connection "postgres://user:pass@localhost:5432/audit" \
   --before "2024-01-01" \
   --dry-run
@@ -56,6 +56,6 @@ pnpm --filter @stackio/audit-cli exec audit-cli retention-postgres \
 Optional flags: `--table` (defaults to `audit_events`).
 
 ## Notes
-- Verification uses the same hash chain algorithm as `@stackio/audit-core`.
+- Verification uses the same hash chain algorithm as `@hexmon/audit-core`.
 - Hash chains are scoped per tenant when `tenantId` is present, otherwise per service.
 - For distributed systems, see `docs/INTEGRITY.md` for ordering and coordination limits.

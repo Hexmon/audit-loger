@@ -19,17 +19,17 @@ Enterprise-grade audit logging for JS/TS with a modular sink ecosystem. Includes
 - Batching + async non-blocking in QUEUE mode.
 
 ## Packages
-- `@stackio/audit-core`
-- `@stackio/audit-node`
-- `@stackio/audit-express`
-- `@stackio/audit-next`
-- `@stackio/audit-cli`
-- `@stackio/audit-export-postgres`
-- `@stackio/audit-sink-http`
-- `@stackio/audit-sink-postgres`
-- `@stackio/audit-sink-mongodb`
-- `@stackio/audit-sink-file-jsonl`
-- `@stackio/audit-buffer-disk`
+- `@hexmon/audit-core`
+- `@hexmon/audit-node`
+- `@hexmon/audit-express`
+- `@hexmon/audit-next`
+- `@hexmon/audit-cli`
+- `@hexmon/audit-export-postgres`
+- `@hexmon/audit-sink-http`
+- `@hexmon/audit-sink-postgres`
+- `@hexmon/audit-sink-mongodb`
+- `@hexmon/audit-sink-file-jsonl`
+- `@hexmon/audit-buffer-disk`
 
 ## Examples
 - Express integration: `examples/express-basic` and `examples/express`
