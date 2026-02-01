@@ -31,7 +31,9 @@
     "pack:check": "node ../../scripts/pack-check.mjs --package @hexmon_tech/audit-export-postgres"
   },
   "dependencies": {
-    "@hexmon_tech/audit-core": "workspace:*",
+    "@hexmon_tech/audit-core": "workspace:*"
+  },
+  "peerDependencies": {
     "pg": "^8.12.0"
   },
   "devDependencies": {
@@ -51,6 +53,6 @@
     "csv"
   ],
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   }
 }

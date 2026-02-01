@@ -31,7 +31,9 @@
     "pack:check": "node ../../scripts/pack-check.mjs --package @hexmon_tech/audit-sink-mongodb"
   },
   "dependencies": {
-    "@hexmon_tech/audit-core": "workspace:*",
+    "@hexmon_tech/audit-core": "workspace:*"
+  },
+  "peerDependencies": {
     "mongodb": "^6.8.0"
   },
   "description": "MongoDB sink for audit event storage with idempotent inserts.",
@@ -48,6 +50,6 @@
     "database"
   ],
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   }
 }
