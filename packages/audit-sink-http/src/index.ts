@@ -28,12 +28,14 @@ const buildFailures = (
 
 const createAbortController = (signal?: AbortSignal, timeoutMs?: number) => {
   const controller = new AbortController();
+  let onAbort: (() => void) | undefined;
 
   if (signal) {
     if (signal.aborted) {
       controller.abort();
     } else {
-      signal.addEventListener('abort', () => controller.abort(), { once: true });
+      onAbort = () => controller.abort();
+      signal.addEventListener('abort', onAbort, { once: true });
     }
   }
 
@@ -42,7 +44,12 @@ const createAbortController = (signal?: AbortSignal, timeoutMs?: number) => {
     timeoutId = setTimeout(() => controller.abort(), timeoutMs);
   }
 
-  return { controller, timeoutId };
+  const cleanup = () => {
+    if (timeoutId) clearTimeout(timeoutId);
+    if (onAbort && signal) signal.removeEventListener('abort', onAbort);
+  };
+
+  return { controller, cleanup };
 };
 
 const serializeEvents = (() => {
@@ -78,7 +85,7 @@ export const createHttpAuditSink = (config: HttpAuditSinkConfig): AuditSink => {
         return { ok: true, written: 0, failed: 0, failures: [] };
       }
 
-      const { controller, timeoutId } = createAbortController(signal, config.timeoutMs);
+      const { controller, cleanup } = createAbortController(signal, config.timeoutMs);
 
       try {
         const body = serializeEvents(events);
@@ -115,9 +122,7 @@ export const createHttpAuditSink = (config: HttpAuditSinkConfig): AuditSink => {
           failures,
         };
       } finally {
-        if (timeoutId) {
-          clearTimeout(timeoutId);
-        }
+        cleanup();
       }
     },
     flush: async () => {},

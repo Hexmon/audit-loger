@@ -57,14 +57,18 @@ export const createMongoAuditSink = (config: MongoAuditSinkConfig): AuditSink =>
   const collectionName = config.collectionName ?? DEFAULT_COLLECTION;
   const ensureIndexes = config.ensureIndexes ?? true;
 
-  let connected = false;
+  let connectPromise: Promise<void> | null = null;
   let indexReady: Promise<void> | null = null;
 
-  const getCollection = async () => {
-    if (!connected) {
-      await client.connect();
-      connected = true;
+  const ensureConnected = async () => {
+    if (!connectPromise) {
+      connectPromise = client.connect().then(() => undefined);
     }
+    await connectPromise;
+  };
+
+  const getCollection = async () => {
+    await ensureConnected();
     const collection = client.db(dbName).collection<AuditEvent>(collectionName);
 
     if (ensureIndexes && !indexReady) {
@@ -81,7 +85,10 @@ export const createMongoAuditSink = (config: MongoAuditSinkConfig): AuditSink =>
   return {
     name: config.name ?? 'mongodb',
     writeBatch: async (events: AuditEvent[], signal?: AbortSignal): Promise<WriteResult> => {
-      void signal;
+      if (signal?.aborted) {
+        const failures = buildFailures(events, 'TRANSIENT', 'aborted');
+        return { ok: false, written: 0, failed: events.length, failures };
+      }
       if (events.length === 0) {
         return { ok: true, written: 0, failed: 0, failures: [] };
       }

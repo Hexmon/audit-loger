@@ -56,7 +56,10 @@ export const createPostgresAuditSink = (config: PostgresAuditSinkConfig): AuditS
   return {
     name: config.name ?? 'postgres',
     writeBatch: async (events: AuditEvent[], signal?: AbortSignal): Promise<WriteResult> => {
-      void signal;
+      if (signal?.aborted) {
+        const failures = buildFailures(events, 'TRANSIENT', 'aborted');
+        return { ok: false, written: 0, failed: events.length, failures };
+      }
       if (events.length === 0) {
         return { ok: true, written: 0, failed: 0, failures: [] };
       }

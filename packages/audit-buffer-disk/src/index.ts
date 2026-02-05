@@ -99,10 +99,13 @@ const serializeEvent = (() => {
 const buildPayload = (events: AuditEvent[]): string =>
   `${events.map((event) => serializeEvent(event)).join('\n')}\n`;
 
+type ByteTracker = { bytes: number };
+
 const appendEvents = async (
   filePath: string,
   events: AuditEvent[],
   maxBufferBytes?: number,
+  tracker?: ByteTracker,
 ): Promise<
   | { ok: true }
   | { ok: false; error: string; errorType: AuditErrorType }
@@ -115,7 +118,7 @@ const appendEvents = async (
   const payloadBytes = Buffer.byteLength(payload, 'utf8');
 
   try {
-    const currentSize = await getFileSize(filePath);
+    const currentSize = tracker ? tracker.bytes : await getFileSize(filePath);
     if (maxBufferBytes && maxBufferBytes > 0 && currentSize + payloadBytes > maxBufferBytes) {
       return {
         ok: false,
@@ -126,6 +129,9 @@ const appendEvents = async (
 
     await ensureDir(filePath);
     await appendFile(filePath, payload, { encoding: 'utf8' });
+    if (tracker) {
+      tracker.bytes += payloadBytes;
+    }
     return { ok: true };
   } catch (error) {
     return {
@@ -143,17 +149,24 @@ export const createDiskBuffer = (config: DiskBufferConfig): DiskBufferSink => {
 
   const filePath = config.filePath;
   const maxBufferBytes = config.maxBufferBytes;
+  const tracker: ByteTracker = { bytes: 0 };
+
+  // Initialize tracker from existing file size (best-effort, non-blocking)
+  getFileSize(filePath).then((size) => { tracker.bytes = size; }).catch(() => {});
 
   const writeBatch = async (
     events: AuditEvent[],
     signal?: AbortSignal,
   ): Promise<WriteResult> => {
-    void signal;
+    if (signal?.aborted) {
+      const failures = buildFailures(events, 'TRANSIENT', 'aborted');
+      return { ok: false, written: 0, failed: events.length, failures };
+    }
     if (events.length === 0) {
       return { ok: true, written: 0, failed: 0, failures: [] };
     }
 
-    const result = await appendEvents(filePath, events, maxBufferBytes);
+    const result = await appendEvents(filePath, events, maxBufferBytes, tracker);
     if (result.ok) {
       return { ok: true, written: events.length, failed: 0, failures: [] };
     }

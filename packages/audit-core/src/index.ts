@@ -1112,11 +1112,21 @@ const truncatePayload = (
   return { ok: true, value: createTruncationValue(size.bytes), truncated: true };
 };
 
+const MAX_REDACTION_KEY_LENGTH = 512;
+
+const safePatternTest = (pattern: RegExp, value: string): boolean => {
+  try {
+    return pattern.test(value.length > MAX_REDACTION_KEY_LENGTH ? value.slice(0, MAX_REDACTION_KEY_LENGTH) : value);
+  } catch {
+    return false;
+  }
+};
+
 const shouldRedactKey = (key: string, config: ResolvedRedactionConfig): boolean => {
   if (config.keySet.has(key.toLowerCase())) {
     return true;
   }
-  return config.keyPatterns.some((pattern) => pattern.test(key));
+  return config.keyPatterns.some((pattern) => safePatternTest(pattern, key));
 };
 
 const redactValue = (value: unknown, config: ResolvedRedactionConfig, seen: WeakSet<object>) => {
@@ -1830,13 +1840,10 @@ export const multiSink = (
 const getRandomBytes = (length: number): Uint8Array => {
   const bytes = new Uint8Array(length);
   const cryptoObj = typeof globalThis !== 'undefined' ? globalThis.crypto : undefined;
-  if (cryptoObj?.getRandomValues) {
-    cryptoObj.getRandomValues(bytes);
-    return bytes;
+  if (!cryptoObj?.getRandomValues) {
+    throw new Error('crypto.getRandomValues is required for secure event ID generation');
   }
-  for (let i = 0; i < length; i += 1) {
-    bytes[i] = Math.floor(Math.random() * 256);
-  }
+  cryptoObj.getRandomValues(bytes);
   return bytes;
 };
 
